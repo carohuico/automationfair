@@ -1,25 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import TimelinePage from './pages/TimelinePage';
+import LaunchpadPage from './pages/LaunchpadPage';
 import './App.css';
+import Footer from './components/Footer/Footer';
+
+const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleContainerClick = () => {
+    navigate('/timeline');
+  };
+
+  return (
+    <>
+      <div className="App-bg">
+        <div className="container" onClick={handleContainerClick}>
+          <p className="learn-text">
+            LEARN HOW TO <br />
+            <img src="/accelerate-logo.png" alt="Accelerate Logo" className="accelerate-logo" />
+          </p>
+        </div>  
+      </div>
+            <Footer showBackButton={false} />
+        
+    </>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/launchpad" element={<LaunchpadPage />} />
+      </Routes>
+    </Router>
   );
 }
 

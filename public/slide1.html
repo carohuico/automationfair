@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Background Image</title>
+    <link rel="stylesheet" href="slide1.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function navigateToLaunchpad() {
+            window.location.href = '/launchpad';
+        }
+    </script>
+</head>
+<body>
+    <div class="main-container" onclick="navigateToLaunchpad()">
+        <div class="content">
+            <h1 class="main-title">Contactor Line Timeline Continues improvement.</h1>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item item-2020">
+                    <div class="year-box yellow">2020</div>
+                    <div class="info-box">
+                        <h3>Line Automation:</h3>
+                        <p>The line is automatized with PLC, sensors and cameras</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item item-2021">
+                    <div class="year-box orange">2021</div>
+                    <div class="info-box">
+                        <h3>iTrak:</h3>
+                        <p>The system find inconsistency. Improve energy management system.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item item-2023">
+                    <div class="year-box pink">2023</div>
+                    <div class="info-box">
+                        <h3>Label Printer:</h3>
+                        <ul>
+                            <li>100% operator certification.</li>
+                            <li>0 print quality escapements since implementation.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item item-2025">
+                    <div class="year-box purple">2025</div>
+                    <div class="info-box">
+                        <h3>Enablement:</h3>
+                        <p>DataMosaix and FT Flix</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-section">
+            <div class="logo-left">
+                <img src="logo-create.webp" alt="Create Logo" class="create-logo">
+            </div>
+            <button onclick="event.stopPropagation(); window.history.back()" class="back-button">BACK</button>
+            <div class="logo-right">
+                <img src="logo-lifecycle.png" alt="Lifecycle Logo" class="lifecycle-logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

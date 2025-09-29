@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.launchpad-container {
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Barlow', sans-serif;
+  position: relative;
+  overflow: visible;
+}
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 260px;
+    transform: none;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    border-radius: 8px;
+    padding: 8px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 45px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu svg {
+    width: 18px;
+    height: 18px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    background: rgba(240, 240, 240, 0.95);
+    border-color: rgba(150, 150, 150, 0.7);
+}
+
+.hamburger-menu:hover svg {
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* Cuando el sidebar está cerrado, el botón se mueve a la izquierda con forma de pestaña */
+.hamburger-menu.closed {
+    left: 0px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu span {
+  display: none; 
+}
+
+.sidebar {
+  width: 0;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sidebar.open {
+  width: 300px;
+  border-right: 8px solid #d3d3d3;
+}
+
+/* Header del sidebar */
+.sidebar-header {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 300px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-close:hover {
+  color: #333;
+}
+
+.sidebar-nav {
+  padding: 20px 0;
+  min-width: 300px;
+}
+
+.sidebar-item {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  border: none;
+  background: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin: 0 0px 5% 10%;
+  font-size: 16px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  background: linear-gradient(90deg, #f3f3f3 50px, #d3d3d3 50%);
+  box-shadow: #9b9b9b 0px 0px 8px;
+}
+
+.sidebar-item:hover {
+    background: linear-gradient(90deg, #62CCEF 50px, #84E291 50%);
+    background-size: 200% 200%;
+    color: white;
+}
+
+.sidebar-item.active {
+    background: linear-gradient(90deg, #62CCEF 50px, #84E291 50%);
+    color: white;
+}
+
+.main-content {
+  flex: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.main-content.sidebar-open {
+  margin-left: 0;
+}
+
+.main-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+/* Media Query específico para Monitor ELO 43" - 1920x1080 */
+@media (min-width: 1800px) and (max-width: 2000px) and (min-height: 1000px) and (max-height: 1100px) {
+  .hamburger-menu {
+    width: 45px;
+    height: 55px;
+    padding: 12px 8px;
+    top: 30px;
+    left: 350px;
+  }
+  
+  .hamburger-menu svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .hamburger-menu.closed {
+    left: 0px;
+  }
+  
+  .sidebar.open {
+    width: 400px;
+  }
+  
+  .sidebar-header,
+  .sidebar-nav {
+    min-width: 400px;
+  }
+  
+  .sidebar-header {
+    padding: 40px 30px;
+  }
+  
+  .sidebar-item {
+    padding: 25px 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  
+  .main-content h1 {
+    font-size: 4rem;
+    margin-bottom: 40px;
+  }
+}
