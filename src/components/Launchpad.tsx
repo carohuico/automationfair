@@ -83,74 +83,6 @@ const Launchpad: React.FC = () => {
               style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}
             >
               <span style={{ flex: 1 }}>OVERVIEW</span>
-              <div className="flex gap-2 ml-2" style={{ display: 'flex', marginRight: '10%', gap: '8px' }}>
-              <button
-                className="flex items-center justify-center rounded-full bg-[#219BD3] border-2 border-yellow-400 w-12 h-12 relative"
-                aria-label="Icon 1"
-                style={{ position: 'relative' }}
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSectionChange('map');
-                }}
-              >
-                <span className="text-white text-xl font-bold">T</span>
-                <span
-                style={{
-                  position: 'absolute',
-                  top: '-6px',
-                  right: '-6px',
-                  width: '20px',
-                  height: '20px',
-                  background: '#195C7A',
-                  borderRadius: '50%',
-                  border: '2px solid #FACC15',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                }}
-                >
-                <svg width="10" height="10" viewBox="0 0 10 10">
-                  <path d="M2 8L8 2M8 2V7M8 2H3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-                </span>
-              </button>
-                <button
-                className="flex items-center justify-center rounded-full bg-[#219BD3] border-2 border-yellow-400 w-12 h-12 relative"
-                aria-label="Icon 2"
-                style={{ position: 'relative' }}
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSectionChange('slides');
-                }}
-                >
-                <span className="text-white text-lg">
-                  <img src="/icono.png" alt="icon" style={{ width: '30px', height: '30px' }} />
-                </span>
-                <span
-                  style={{
-                  position: 'absolute',
-                  top: '-6px',
-                  right: '-6px',
-                  width: '20px',
-                  height: '20px',
-                  background: '#195C7A',
-                  borderRadius: '50%',
-                  border: '2px solid #FACC15',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                  }}
-                >
-                  <svg width="10" height="10" viewBox="0 0 10 10">
-                  <path d="M2 8L8 2M8 2V7M8 2H3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                </span>
-                </button>
-              </div>
             </button>
             <button 
               className={`sidebar-item ${activeSection === 'enable-data' ? 'active' : ''} flex items-center`}
@@ -193,7 +125,7 @@ const Launchpad: React.FC = () => {
           {renderActiveSection()}
         </div>
       </div>
-      <Footer onBackClick={handleNavigateBack} showBackButton={true} />
+      <Footer onBackClick={handleNavigateBack} showBackButton={true} handleSectionChange={handleSectionChange} />
     </div>
   );
 };

@@ -51,18 +51,27 @@ const Overview: React.FC = () => {
   };
   return (
     <div className="section-container relative" style={{paddingLeft: '5%', paddingTop: '5%', paddingRight: '5%', paddingBottom: '5%'}}>
-        <h2 className="text-2xl font-bold mb-8">Station Based Digital Solutions</h2>
-        <div className="flex items-center">
-            <div className="w-3/5 pr-6">    
-                <p>
-                    After achieving flexible automated manufacturing for the multiple contactor deviations, leadership was ready to invest in a program that accelerated digital transformation with <strong>what's next.</strong>
-                    <br />
-                    IT and OT convergence, Digital Twins and Industrial AI optimize production, drive sustainable growth and enable data-driven decision making, starting from the edge and across the value chain.
-                </p>
+        <div className="flex items-stretch w-full mb-8 gap-8 h-[35vh]">
+          <div className="w-3/5 bg-white p-3 rounded-lg flex flex-col justify-center h-full" style={{ boxShadow: '0 0 20px 8px rgba(0, 0, 0, 0.15)' }}>
+            <div className="flex flex-col h-full justify-center">
+              <h3 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 flex-shrink-0">Station Based Digital Solutions</h3>
+              <p className="text-[10px] md:text-xs lg:text-sm leading-tight break-words flex-1">
+                After achieving flexible automated manufacturing for the multiple contactor deviations, leadership was ready to invest in a program that accelerated digital transformation with <strong>what's next.</strong>
+                <br />
+                IT and OT convergence, Digital Twins and Industrial AI optimize production, drive sustainable growth and enable data-driven decision making, starting from the edge and across the value chain.
+              </p>
             </div>
-            <div className="w-2/5 flex justify-end mr-6">
-                <img src="/bom.png" alt="Arrow Down" className="max-w-full h-auto" />
+          </div>
+          <div className="w-2/5 flex items-center justify-end h-full">
+            <div className="bg-white p-4 rounded-lg flex items-center w-full h-full" style={{ boxShadow: '0 0 20px 8px rgba(0, 0, 0, 0.15)' }}>
+              <img
+                src="/bom.png"
+                alt="Arrow Down"
+                className="object-contain w-full h-full max-h-full"
+                style={{ aspectRatio: '2/1' }}
+              />
             </div>
+          </div>
         </div>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 lg:gap-20 mt-2">
             {[
@@ -77,9 +86,9 @@ const Overview: React.FC = () => {
                         onClick={() => {
                             setSelectedPoint(idx);
                             setIsModalOpen(true);
-                        }}
-                        className="
-                            circle border-8 border-yellow-400 flex items-center justify-center rounded-full shadow-lg
+                          }}
+                          className="
+                            circle flex items-center justify-center rounded-full shadow-xl
                             w-[80px] h-[80px]
                             sm:w-[100px] sm:h-[100px]
                             md:w-[140px] md:h-[140px]
@@ -88,13 +97,13 @@ const Overview: React.FC = () => {
                             hover:cursor-pointer
                             hover:scale-105
                             transition-transform duration-300
-                        "
-                        style={{
-                            background: "linear-gradient(to right, #0F69A5, #219BD3)",
+                          "
+                          style={{
+                            background: "linear-gradient(90deg, #21a1d3 0%, #84e291 100%)",
                             position: "relative",
                             maxWidth: '100vw'
-                        }}
-                    >
+                          }}
+                        >
                         <span className="
                             text-white text-center font-bold px-1
                             text-base
@@ -106,45 +115,49 @@ const Overview: React.FC = () => {
                             {item.label}
                         </span>
                         <div
-                            className="
-                                absolute
-                                -top-2 -right-2
-                                w-5 h-5
-                                sm:w-6 sm:h-6
-                                md:w-8 md:h-8
-                                lg:w-14 lg:h-14
-                                flex items-center justify-center
-                                rounded-full
-                                border-4 border-yellow-400
-                                bg-[#0F69A5]
-                                z-10
-                            "
+                          className="
+                            absolute
+                            -bottom-2 -right-2
+                            w-5 h-5
+                            sm:w-6 sm:h-6
+                            md:w-12 md:h-12
+                            lg:w-16 lg:h-16
+                            flex items-center justify-center
+                            rounded-full
+                            border border-white
+                            bg-[#ffffff]
+                            shadow-lg
+                            z-10
+                          "
+                          style={{
+                            boxShadow: '0 4px 16px 0 rgba(33, 161, 211, 0.4), 0 2px 8px 0 rgba(0,0,0,0.15)'
+                          }}
                         >
-                            <span
-                                style={{
-                                    color: "white",
-                                    fontWeight: "bold"
-                                }}
-                                className="
-                                    text-base
-                                    sm:text-lg
-                                    md:text-xl
-                                    lg:text-2xl
-                                "
+                          <span
+                            style={{
+                              color: "#6b7280",
+                              fontWeight: "bold"
+                            }}
+                            className="
+                              text-base
+                              sm:text-lg
+                              md:text-xl
+                              lg:text-2xl
+                            "
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              strokeWidth="3" stroke="currentColor"
+                              className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-8 lg:h-8"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    strokeWidth="3" stroke="currentColor"
-                                    className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-8 lg:h-8"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg>
-                            </span>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                          </span>
                         </div>
                     </div>
                 </div>
             ))}
         </div>
-        <div className="mt-2 p-4 rounded-lg" style={{ background: 'linear-gradient(to right, #014383, #219BD3)' }}>
+        <div className="mt-2 p-4 rounded-lg" style={{ background: 'linear-gradient(to right, #219BD3, #014383)' }}>
             <h3 className="text-white font-bold mb-2 text-xl sm:text-xl md:text-2xl lg:text-3xl">Results:</h3>
             <div className="flex flex-col md:flex-row items-start gap-2 md:gap-4">
             <div className="flex items-start flex-1">
