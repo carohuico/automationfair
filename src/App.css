@@ -1,21 +1,19 @@
 .App-bg {
   font-family: 'Barlow', sans-serif;
   background-color: #ffffff;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
-  padding-bottom: 120px;
+  padding: 5%;
   box-sizing: border-box;
 }
 
 .container {
-  background: linear-gradient(to right, #c4c4c4, #ffffff);
   min-width: 80vw;
-  min-height: 80vh;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

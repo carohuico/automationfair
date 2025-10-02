@@ -1,26 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
-import './TimelinePage.css';
+import InitialFooter from '../components/Footer/initialFooter';
+import './Splash.css';
 
 const TimelinePage: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleNavigateToLaunchpad = () => {
+  const handleNavigatetoLaunchpad = () => {
     navigate('/launchpad');
   };
 
-  const handleNavigateBack = () => {
-    navigate('/');
-  };
-
   return (
-    <div className="section-container" onClick={handleNavigateToLaunchpad}>
-      <div className="img-container">
-        <img src="/timeline.png" alt="Timeline" className="section-image" />
+    <>
+       <div className="splash-container" onClick={handleNavigatetoLaunchpad}>
+        <div className="img-container">
+          <img src="/timeline.PNG" alt="Timeline" className="section-image" />
+        </div>
       </div>
-      <Footer onBackClick={handleNavigateBack} showBackButton={true} />
-    </div>
+      <InitialFooter />
+    </>
   );
 };
 

@@ -1,7 +1,16 @@
 import React from 'react';
 import './SectionStyles.css';
+import Footer from '../Footer/Footer';
 
-const EnableData: React.FC = () => {
+interface EnableDataProps {
+  handleSectionChange?: (section: string) => void;
+  currentSection?: string;
+}
+
+const EnableData: React.FC<EnableDataProps> = ({ 
+  handleSectionChange = () => {},
+  currentSection = 'enable-data'
+}) => {
   const [hoveredPoint, setHoveredPoint] = React.useState<number | null>(null);
   const [hoverTimeout, setHoverTimeout] = React.useState<NodeJS.Timeout | null>(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -125,6 +134,7 @@ const EnableData: React.FC = () => {
         </div>
       )}
       
+      
       <div className="img-container">
           <img src="/line.jpg" alt="Enable Data slide" />
 
@@ -240,6 +250,7 @@ const EnableData: React.FC = () => {
             )}
           </div>
         </div>
+        <Footer showBackButton={true} handleSectionChange={handleSectionChange} currentSection={currentSection} />
       </div>
   );
 };
