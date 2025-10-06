@@ -195,14 +195,24 @@ html, body {
 }
 
 .sidebar-item:hover {
-    background: linear-gradient(90deg, #0D88A9, #68B85B);
+    background: linear-gradient(90deg, #21a1d3, #84e291);
     background-size: 200% 200%;
     color: white;
 }
 
 .sidebar-item.active {
-    background: linear-gradient(90deg, #0D88A9, #68B85B);
+    background: linear-gradient(90deg, #21a1d3, #84e291);
     color: white;
+}
+
+.sidebar-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.8rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .main-content {
@@ -285,7 +295,50 @@ html, body {
     margin-left: clamp(300px, 30vw, 350px);
     width: calc(100vw - clamp(300px, 30vw, 350px));
   }
+}
 
+/* LG screens - Pantallas medianas */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .sidebar-item {
+    padding: 0.8rem 1.2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    margin: 0 0 0.8rem 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .sidebar-number {
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    margin-right: 0.5rem !important;
+  }
+  
+  .sidebar-nav {
+    padding: 0.25rem 0 !important;
+  }
+}
+
+/* XL screens - Pantallas grandes */
+@media (min-width: 1280px) and (max-width: 1799px) {
+  .sidebar-item {
+    padding: 0.8rem 1.2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    margin: 0 0 0.8rem 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .sidebar-number {
+    font-size: 0.9rem !important;
+    font-weight: bold !important;
+    margin-right: 0.4rem !important;
+  }
+  
+  .sidebar-nav {
+    padding: 0.2rem 0 !important;
+  }
 }
 
 /* Monitor ELO 43" - 1920x1080 y pantallas grandes */

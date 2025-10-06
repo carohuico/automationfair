@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Launchpad.css';
 
@@ -14,6 +14,7 @@ import Footer from './Footer/Footer';
 const Launchpad: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeSection, setActiveSection] = useState<string>('overview');
+  const [navigationHistory, setNavigationHistory] = useState<string[]>(['overview']);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -21,35 +22,67 @@ const Launchpad: React.FC = () => {
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
+    
+    // Actualizar historial de navegación
+    setNavigationHistory(prev => {
+      // Si la sección ya está en el historial, remover todo lo que esté después de ella
+      const existingIndex = prev.indexOf(section);
+      if (existingIndex >= 0) {
+        return prev.slice(0, existingIndex + 1);
+      }
+      // Si es una nueva sección, agregarla al final
+      return [...prev, section];
+    });
+    
     if (window.innerWidth <= 768) {
       setSidebarOpen(false);
     }
   };
 
   const renderActiveSection = () => {
+    const commonProps = {
+      handleSectionChange,
+      currentSection: activeSection,
+      navigationHistory,
+      onBackClick: handleNavigateBack
+    };
+
     switch (activeSection) {
       case 'overview':
-        return <Overview handleSectionChange={handleSectionChange} currentSection={activeSection} />;
+        return <Overview {...commonProps} />;
       case 'enable-data':
-        return <EnableData handleSectionChange={handleSectionChange} currentSection={activeSection} />;
+        return <EnableData {...commonProps} />;
       case 'contextualize-data':
-        return <ContextualizeData handleSectionChange={handleSectionChange} currentSection={activeSection} />;
+        return <ContextualizeData {...commonProps} />;
       case 'monitor-production':
-        return <MonitorProduction handleSectionChange={handleSectionChange} currentSection={activeSection} />;
+        return <MonitorProduction {...commonProps} />;
       case 'optimize-production':
-        return <OptimizeProduction handleSectionChange={handleSectionChange} currentSection={activeSection} />;
+        return <OptimizeProduction {...commonProps} />;
       case 'slides':
         return <Slides />;
       case 'map':
         return <Map />;
       default:
-        return <Overview />;
+        return <Overview {...commonProps} />;
     }
   };
 
   const navigate = useNavigate();
 
   const handleNavigateBack = () => {
+    // Usar la lógica del historial para navegar hacia atrás entre secciones
+    if (navigationHistory.length > 1) {
+      const currentIndex = navigationHistory.indexOf(activeSection);
+      if (currentIndex > 0) {
+        const previousSection = navigationHistory[currentIndex - 1];
+        // Remover la sección actual del historial
+        setNavigationHistory(prev => prev.slice(0, currentIndex));
+        setActiveSection(previousSection);
+        return;
+      }
+    }
+    
+    // Si no hay historial, navegar a timeline
     navigate('/timeline');
   };
 
@@ -78,18 +111,17 @@ const Launchpad: React.FC = () => {
           </div>
           <nav className="sidebar-nav">
             <button 
-              className={`sidebar-item ${activeSection === 'overview' ? 'active' : ''} flex items-center justify-between w-full`}
+              className={`sidebar-item ${activeSection === 'overview' ? 'active' : ''}`}
               onClick={() => handleSectionChange('overview')}
-              style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}
             >
-              <span style={{ flex: 1 }}>OVERVIEW</span>
+              <span className="flex-1">OVERVIEW</span>
             </button>
             <button 
-              className={`sidebar-item ${activeSection === 'enable-data' ? 'active' : ''} flex items-center`}
+              className={`sidebar-item ${activeSection === 'enable-data' ? 'active' : ''}`}
               onClick={() => handleSectionChange('enable-data')}
             >
               <span
-                className={`text-4xl font-bold mr-4 select-none ${
+                className={`sidebar-number ${
                   activeSection === 'enable-data' ? 'text-white' : 'text-gray-400'
                 }`}
               >
@@ -98,11 +130,11 @@ const Launchpad: React.FC = () => {
               ENABLE DATA
             </button>
             <button 
-              className={`sidebar-item ${activeSection === 'contextualize-data' ? 'active' : ''} flex items-center`}
+              className={`sidebar-item ${activeSection === 'contextualize-data' ? 'active' : ''}`}
               onClick={() => handleSectionChange('contextualize-data')}
             >
               <span
-                className={`text-4xl font-bold mr-4 select-none ${
+                className={`sidebar-number ${
                   activeSection === 'contextualize-data' ? 'text-white' : 'text-gray-400'
                 }`}
               >
@@ -111,11 +143,11 @@ const Launchpad: React.FC = () => {
               CONTEXTUALIZE DATA
             </button>
             <button 
-              className={`sidebar-item ${activeSection === 'monitor-production' ? 'active' : ''} flex items-center`}
+              className={`sidebar-item ${activeSection === 'monitor-production' ? 'active' : ''}`}
               onClick={() => handleSectionChange('monitor-production')}
             >
               <span
-                className={`text-4xl font-bold mr-4 select-none ${
+                className={`sidebar-number ${
                   activeSection === 'monitor-production' ? 'text-white' : 'text-gray-400'
                 }`}
               >
@@ -124,11 +156,11 @@ const Launchpad: React.FC = () => {
               MONITOR PRODUCTION
             </button>
             <button 
-              className={`sidebar-item ${activeSection === 'optimize-production' ? 'active' : ''} flex items-center`}
+              className={`sidebar-item ${activeSection === 'optimize-production' ? 'active' : ''}`}
               onClick={() => handleSectionChange('optimize-production')}
             >
               <span
-                className={`text-4xl font-bold mr-4 select-none ${
+                className={`sidebar-number ${
                   activeSection === 'optimize-production' ? 'text-white' : 'text-gray-400'
                 }`}
               >

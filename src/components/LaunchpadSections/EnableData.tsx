@@ -5,11 +5,15 @@ import Footer from '../Footer/Footer';
 interface EnableDataProps {
   handleSectionChange?: (section: string) => void;
   currentSection?: string;
+  navigationHistory?: string[];
+  onBackClick?: () => void;
 }
 
 const EnableData: React.FC<EnableDataProps> = ({ 
   handleSectionChange = () => {},
-  currentSection = 'enable-data'
+  currentSection = 'enable-data',
+  navigationHistory = [],
+  onBackClick
 }) => {
   const [hoveredPoint, setHoveredPoint] = React.useState<number | null>(null);
   const [hoverTimeout, setHoverTimeout] = React.useState<NodeJS.Timeout | null>(null);
@@ -250,7 +254,13 @@ const EnableData: React.FC<EnableDataProps> = ({
             )}
           </div>
         </div>
-        <Footer showBackButton={true} handleSectionChange={handleSectionChange} currentSection={currentSection} />
+        <Footer 
+          showBackButton={true} 
+          handleSectionChange={handleSectionChange} 
+          currentSection={currentSection} 
+          navigationHistory={navigationHistory}
+          onBackClick={onBackClick}
+        />
       </div>
   );
 };

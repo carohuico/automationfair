@@ -11,14 +11,23 @@ const TimelinePage: React.FC = () => {
   };
 
   return (
-    <>
-       <div className="splash-container" onClick={handleNavigatetoLaunchpad}>
-        <div className="img-container">
-          <img src="/timeline.PNG" alt="Timeline" className="section-image" />
+    <div className="flex flex-col h-screen overflow-hidden">
+      <div 
+        className="flex-1 cursor-pointer overflow-auto bg-white"
+        onClick={handleNavigatetoLaunchpad}
+      >
+        <div className="w-full h-full flex items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6 xl:p-8 2xl:p-2">
+          <img 
+            src="/timeline.PNG" 
+            alt="Timeline" 
+            className="max-w-full max-h-full object-contain w-auto h-auto 2xl:w-full 2xl:h-full 2xl:object-cover"
+          />
         </div>
       </div>
-      <InitialFooter />
-    </>
+      <div className="flex-shrink-0">
+        <InitialFooter />
+      </div>
+    </div>
   );
 };
 
