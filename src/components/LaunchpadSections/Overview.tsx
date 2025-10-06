@@ -68,7 +68,7 @@ const Overview: React.FC<OverviewProps> = ({
           <div className="flex flex-col md:flex-row items-stretch w-full gap-2 sm:gap-3 md:gap-4 lg:gap-5">
             <div className="w-full md:w-3/5 bg-white rounded-lg flex flex-col justify-center h-full p-2 sm:p-3">
               <div className="flex flex-col h-full justify-center">
-                <h3 className="font-bold mb-1 sm:mb-2 md:mb-3 flex-shrink-0 text-left
+                <h3 className="font-bold mb-1 sm:mb-2 md:mb-3 flex-shrink-0 text-left 
                   text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-tight 2xl:text-5xl">
                   Scalable Digital Solutions
                 </h3>
