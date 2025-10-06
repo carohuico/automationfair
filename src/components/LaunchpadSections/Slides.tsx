@@ -7,7 +7,8 @@ const Slides: React.FC = () => {
   return (
     <div className="section-container">
       <div className="img-container">
-        <div className="carousel-container">
+        <div className="standard-content-container">
+          <div className="carousel-container">
             <style>
             {`
               .carousel .control-dots .dot {
@@ -27,6 +28,7 @@ const Slides: React.FC = () => {
               <img src="/slide3.PNG" alt="Slide 3" className="section-image" />
             </div>
             </Carousel>
+          </div>
         </div>
       </div>
     </div>

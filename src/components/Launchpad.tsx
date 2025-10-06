@@ -184,6 +184,7 @@ const Launchpad: React.FC = () => {
                   console.log('Error loading logo-lifecycle.png');
                   e.currentTarget.style.display = 'none';
                 }}
+                onClick={() => window.location.href = '/'}
               />
               <img
                 src="/logo-create.webp"
@@ -193,6 +194,7 @@ const Launchpad: React.FC = () => {
                   console.log('Error loading logo-create.webp');
                   e.currentTarget.style.display = 'none';
                 }}
+                onClick={() => window.location.href = '/'}
               />
             </div>
         </div>

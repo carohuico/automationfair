@@ -18,7 +18,9 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   return (
     <div className="section-container">
       <div className="img-container">
-        <img src="/monitor.png" alt="Monitor Production" className="section-image" />
+        <div className="standard-content-container">
+          <img src="/monitor.png" alt="Monitor Production" className="section-image" />
+        </div>
       </div>
       <Footer 
         showBackButton={true} 

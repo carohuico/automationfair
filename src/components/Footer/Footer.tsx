@@ -33,6 +33,13 @@ const Footer: React.FC<FooterProps> = ({
   ];
 
   const handleNavigateBack = () => {
+    // Usar onBackClick si está disponible (lógica del componente padre)
+    if (onBackClick) {
+      onBackClick();
+      return;
+    }
+
+    // Lógica de fallback
     if (navigationHistory.length > 1) {
       const currentIndex = navigationHistory.indexOf(currentSection);      
       if (currentIndex > 0) {

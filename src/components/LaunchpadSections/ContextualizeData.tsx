@@ -18,7 +18,9 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
   return (
     <div className="section-container">
       <div className="img-container">
-        <img src="/Contextualize.jpg" alt="Contextualize Data" className="section-image" />
+        <div className="standard-content-container">
+          <img src="/Contextualize.jpg" alt="Contextualize Data" className="section-image" />
+        </div>
       </div>
       <Footer 
         showBackButton={true} 

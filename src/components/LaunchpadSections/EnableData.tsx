@@ -140,7 +140,8 @@ const EnableData: React.FC<EnableDataProps> = ({
       
       
       <div className="img-container">
-          <img src="/line.jpg" alt="Enable Data slide" />
+        <div className="standard-content-container">
+          <img src="/line.jpg" alt="Enable Data slide" className="section-image" />
 
           
           {/* Punto 1 */}
@@ -254,14 +255,15 @@ const EnableData: React.FC<EnableDataProps> = ({
             )}
           </div>
         </div>
-        <Footer 
-          showBackButton={true} 
-          handleSectionChange={handleSectionChange} 
-          currentSection={currentSection} 
-          navigationHistory={navigationHistory}
-          onBackClick={onBackClick}
-        />
       </div>
+      <Footer 
+        showBackButton={true} 
+        handleSectionChange={handleSectionChange} 
+        currentSection={currentSection} 
+        navigationHistory={navigationHistory}
+        onBackClick={onBackClick}
+      />
+    </div>
   );
 };
 

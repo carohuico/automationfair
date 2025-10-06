@@ -64,7 +64,7 @@ const Overview: React.FC<OverviewProps> = ({
   return (
       <div className="section-container">
       <div className="img-container">
-        <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-5 lg:p-6 h-full flex flex-col overflow-hidden">
+        <div className="standard-content-container">
           <div className="flex flex-col md:flex-row items-stretch w-full gap-2 sm:gap-3 md:gap-4 lg:gap-5">
             <div className="w-full md:w-3/5 bg-white rounded-lg flex flex-col justify-center h-full p-2 sm:p-3">
               <div className="flex flex-col h-full justify-center">
@@ -74,7 +74,7 @@ const Overview: React.FC<OverviewProps> = ({
                 </h3>
                 <p className="
                   break-words flex-1 mb-1 sm:mb-2 md:mb-3
-                  text-xs sm:text-sm md:text-base lg:text-sm text-[#666]
+                  text-xs sm:text-sm md:text-base lg:text-sm xl:text-base 2xl:text-3xl text-[#666]
                   leading-relaxed text-left
                 ">
                   After achieving flexible automated manufacturing for the multiple contactor deviations, leadership was ready to invest in a program that accelerated digital transformation with <strong>what&apos;s next.</strong>
