@@ -53,6 +53,7 @@ const Footer: React.FC<FooterProps> = ({
     <>
     <div className="timeline-bottom-section" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <div className="left-section">
+        {hasInternalNavigation && (
           <button 
             onClick={handlePreviousView}
             className={`center-btn flex items-center justify-center gap-2 rounded-xl min-w-[110px] sm:min-w-[120px] md:min-w-[100px] lg:min-w-[90px] xl:min-w-[80px] 2xl:min-w-[70px] w-[clamp(70px,20vw,180px)] min-h-10 md:min-h-9 lg:min-h-8 xl:min-h-7 2xl:min-h-6 border-2 shadow-md font-medium text-[clamp(0.9rem,1.5vw,1.1rem)] 2xl:text-[clamp(0.85rem,1vw,1rem)] transition-shadow px-2 py-1 ${
@@ -73,6 +74,7 @@ const Footer: React.FC<FooterProps> = ({
             </svg>
             BACK
           </button>
+        )}
       </div>
 
       <div
@@ -121,26 +123,28 @@ const Footer: React.FC<FooterProps> = ({
       </div>
 
       <div className="right-section">
-        <button 
-          onClick={handleNextView}
-          className={`center-btn flex items-center justify-center gap-2 rounded-xl min-w-[110px] sm:min-w-[120px] md:min-w-[100px] lg:min-w-[90px] xl:min-w-[80px] 2xl:min-w-[70px] w-[clamp(70px,20vw,180px)] min-h-10 md:min-h-9 lg:min-h-8 xl:min-h-7 2xl:min-h-6 border-2 shadow-md font-medium text-[clamp(0.9rem,1.5vw,1.1rem)] 2xl:text-[clamp(0.85rem,1vw,1rem)] transition-shadow px-2 py-1 ${
-            isNextDisabled 
-              ? 'bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed' 
-              : 'bg-white border-[#104A86] text-[#003366] hover:shadow-lg cursor-pointer'
-          }`}
-          disabled={isNextDisabled}
-        >
-            NEXT
-            <svg 
-              className="next-arrow" 
-              width="16" 
-              height="16" 
-              viewBox="0 0 24 24" 
-              style={{ fill: isNextDisabled ? '#6b7280' : '#003366' }}
-            >
-              <path d="M4 11h12.17l-5.59-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4v-2z"/>
-            </svg>
-          </button>
+        {hasInternalNavigation && (
+          <button 
+            onClick={handleNextView}
+            className={`center-btn flex items-center justify-center gap-2 rounded-xl min-w-[110px] sm:min-w-[120px] md:min-w-[100px] lg:min-w-[90px] xl:min-w-[80px] 2xl:min-w-[70px] w-[clamp(70px,20vw,180px)] min-h-10 md:min-h-9 lg:min-h-8 xl:min-h-7 2xl:min-h-6 border-2 shadow-md font-medium text-[clamp(0.9rem,1.5vw,1.1rem)] 2xl:text-[clamp(0.85rem,1vw,1rem)] transition-shadow px-2 py-1 ${
+              isNextDisabled 
+                ? 'bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed' 
+                : 'bg-white border-[#104A86] text-[#003366] hover:shadow-lg cursor-pointer'
+            }`}
+            disabled={isNextDisabled}
+          >
+              NEXT
+              <svg 
+                className="next-arrow" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                style={{ fill: isNextDisabled ? '#6b7280' : '#003366' }}
+              >
+                <path d="M4 11h12.17l-5.59-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4v-2z"/>
+              </svg>
+            </button>
+        )}
       </div>
     </div>
 

@@ -20,15 +20,15 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   // Definir las diferentes vistas para Monitor Production
   const views = [
     {
-      image: "/monitor.png",
+      image: "/retool.png",
       alt: "Monitor Production - View 1"
     },
     {
-      image: "/plc.webp", // Imagen temporal para prueba
+      image: "/plc.webp", 
       alt: "Monitor Production - View 2"
     },
     {
-      image: "/sensor.webp", // Imagen temporal para prueba
+      image: "/sensor.webp", 
       alt: "Monitor Production - View 3"
     }
   ];

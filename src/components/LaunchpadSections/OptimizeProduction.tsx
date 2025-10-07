@@ -17,18 +17,13 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
 }) => {
   const [currentView, setCurrentView] = useState(0);
   
-  // Definir las diferentes vistas para Optimize Production
   const views = [
     {
       image: "/optimize.png",
       alt: "Optimize Production - View 1"
     },
     {
-      image: "/camera.jpg", // Imagen temporal para prueba
-      alt: "Optimize Production - View 2"
-    },
-    {
-      image: "/timeline.PNG", // Imagen temporal para prueba
+      image: "/temp.png", 
       alt: "Optimize Production - View 3"
     }
   ];

@@ -19,14 +19,48 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
   
   const views = [
     {
-      image: "/Contextualize.jpg",
+      video: "/videoContextualize.mp4",
       alt: "Contextualize Data - View 1"
     },
     {
-      image: "/overview.png", 
+      image: "/Contextualize.jpg", 
       alt: "Contextualize Data - View 2"
-    }
+    },
   ];
+
+  const renderMedia = () => {
+    const view = views[currentView];
+    if (view.video) {
+      return (
+        <video
+          src={view.video}
+          autoPlay
+          muted
+          controls
+          loop
+          className="section-image"
+          style={{ 
+            width: '100%', 
+            height: 'auto',
+            maxHeight: '100%',
+            objectFit: 'contain'
+          }}
+        >
+          Sorry, your browser does not support embedded videos.
+        </video>
+      );
+    }
+    if (view.image) {
+      return (
+        <img
+          src={view.image}
+          alt={view.alt}
+          className="section-image"
+        />
+      );
+    }
+    return null;
+  };
 
   const handleViewChange = (newView: number) => {
     setCurrentView(newView);
@@ -36,11 +70,7 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img 
-            src={views[currentView].image} 
-            alt={views[currentView].alt} 
-            className="section-image" 
-          />
+          {renderMedia()}
         </div>
       </div>
       <Footer 
