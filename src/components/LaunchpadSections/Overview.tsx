@@ -83,7 +83,7 @@ const Overview: React.FC<OverviewProps> = ({
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-2/5 flex items-center justify-center h-16 sm:h-16 xl:h-56 2xl:h-96">
+            <div className="w-full md:w-2/5 flex items-center justify-center h-16 sm:h-16 xl:h-56 2xl:h-96 md:h-20 lg:h-48">
               <div className="bg-white rounded-lg flex items-center w-full h-full p-1 sm:p-2 md:p-3">
                 <img
                   src="/bom.gif"
@@ -137,7 +137,7 @@ const Overview: React.FC<OverviewProps> = ({
               </div>
             ))}
           </div>
-          <div className="mt-1 sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-6 xl:p-2 2xl:p-12 rounded-lg bg-gradient-to-r from-[#219BD3] to-[#014383] flex-shrink-0">
+          <div className="mt-1 sm:mt-2 md:mt-3 lg:mt-4 xl:mt-4 2xl:mt-6 lg:p-4 xl:p-2 2xl:p-12 rounded-lg bg-gradient-to-r from-[#219BD3] to-[#014383] flex-shrink-0">
             <h3 className="text-white font-bold mb-1 sm:mb-2 md:mb-3 text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl">Results:</h3>
             <div className="flex flex-col sm:flex-row items-start gap-1 sm:gap-2 md:gap-3">
               <div className="flex items-start flex-1 w-full min-w-0">

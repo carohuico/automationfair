@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SectionStyles.css';
 import Footer from '../Footer/Footer';
 
@@ -15,11 +15,32 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
   navigationHistory = [],
   onBackClick
 }) => {
+  const [currentView, setCurrentView] = useState(0);
+  
+  const views = [
+    {
+      image: "/Contextualize.jpg",
+      alt: "Contextualize Data - View 1"
+    },
+    {
+      image: "/overview.png", 
+      alt: "Contextualize Data - View 2"
+    }
+  ];
+
+  const handleViewChange = (newView: number) => {
+    setCurrentView(newView);
+  };
+
   return (
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img src="/Contextualize.jpg" alt="Contextualize Data" className="section-image" />
+          <img 
+            src={views[currentView].image} 
+            alt={views[currentView].alt} 
+            className="section-image" 
+          />
         </div>
       </div>
       <Footer 
@@ -28,6 +49,9 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
         currentSection={currentSection} 
         navigationHistory={navigationHistory}
         onBackClick={onBackClick}
+        currentView={currentView}
+        onViewChange={handleViewChange}
+        totalViews={views.length}
       />
     </div>
   );

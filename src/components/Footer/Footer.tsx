@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Footer.css';
@@ -11,83 +10,64 @@ interface FooterProps {
   handleSectionChange?: (section: string) => void;
   currentSection?: string;
   navigationHistory?: string[];
+  // Props para navegación interna de vistas
+  currentView?: number;
+  onViewChange?: (view: number) => void;
+  totalViews?: number;
 }
 
 const Footer: React.FC<FooterProps> = ({
-  onBackClick,
-  showBackButton = true,
-  handleSectionChange = () => {},
   currentSection = 'overview',
-  navigationHistory = [],
+  currentView = 0,
+  onViewChange = () => {},
+  totalViews = 1,
 }) => {
-  const navigate = useNavigate();
   const [showArchitecturePopup, setShowArchitecturePopup] = useState(false);
   const [showApproachPopup, setShowApproachPopup] = useState(false);
 
-  const sectionOrder = [
-    'overview',
-    'enable-data',
+  //internal navigation sections
+  const sectionsWithInternalNavigation = [
     'contextualize-data',
-    'monitor-production',
+    'monitor-production', 
     'optimize-production'
   ];
 
-  const handleNavigateBack = () => {
-    // Usar onBackClick si está disponible (lógica del componente padre)
-    if (onBackClick) {
-      onBackClick();
-      return;
-    }
+  const hasInternalNavigation = sectionsWithInternalNavigation.includes(currentSection);
 
-    // Lógica de fallback
-    if (navigationHistory.length > 1) {
-      const currentIndex = navigationHistory.indexOf(currentSection);      
-      if (currentIndex > 0) {
-        const previousSection = navigationHistory[currentIndex - 1];
-        handleSectionChange(previousSection);
-        return;
-      }
-    }
-    
-    navigate('/');
-  };
-
-
-
-  const handleNext = () => {
-    const currentIndex = sectionOrder.indexOf(currentSection);
-    if (currentIndex >= 0 && currentIndex < sectionOrder.length - 1) {
-      const nextSection = sectionOrder[currentIndex + 1];
-      handleSectionChange(nextSection);
-    } else if (currentIndex === sectionOrder.length - 1) {
-      navigate('/timeline');
+  const handlePreviousView = () => {
+    if (hasInternalNavigation && currentView > 0) {
+      onViewChange(currentView - 1);
     }
   };
+
+  const handleNextView = () => {
+    if (hasInternalNavigation && currentView < totalViews - 1) {
+      onViewChange(currentView + 1);
+    }
+  };
+
+  const isBackDisabled = !hasInternalNavigation || currentView === 0;
+  const isNextDisabled = !hasInternalNavigation || currentView === totalViews - 1;
 
   return (
     <>
     <div className="timeline-bottom-section" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <div className="left-section">
           <button 
-            onClick={(e) => { 
-              e.stopPropagation(); 
-              if (currentSection !== 'overview') {
-                handleNavigateBack(); 
-              }
-            }} 
+            onClick={handlePreviousView}
             className={`center-btn flex items-center justify-center gap-2 rounded-xl min-w-[110px] sm:min-w-[120px] md:min-w-[100px] lg:min-w-[90px] xl:min-w-[80px] 2xl:min-w-[70px] w-[clamp(70px,20vw,180px)] min-h-10 md:min-h-9 lg:min-h-8 xl:min-h-7 2xl:min-h-6 border-2 shadow-md font-medium text-[clamp(0.9rem,1.5vw,1.1rem)] 2xl:text-[clamp(0.85rem,1vw,1rem)] transition-shadow px-2 py-1 ${
-              currentSection === 'overview' 
+              isBackDisabled 
                 ? 'bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed' 
                 : 'bg-white border-[#104A86] text-[#003366] hover:shadow-lg cursor-pointer'
             }`}
-            disabled={currentSection === 'overview'}
+            disabled={isBackDisabled}
           >
             <svg 
               className="back-arrow" 
               width="16" 
               height="16" 
               viewBox="0 0 24 24" 
-              style={{ fill: currentSection === 'overview' ? '#6b7280' : '#003366' }}
+              style={{ fill: isBackDisabled ? '#6b7280' : '#003366' }}
             >
               <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
             </svg>
@@ -142,18 +122,13 @@ const Footer: React.FC<FooterProps> = ({
 
       <div className="right-section">
         <button 
-          onClick={(e) => { 
-            e.stopPropagation(); 
-            if (currentSection !== 'optimize-production') {
-              handleNext(); 
-            }
-          }} 
+          onClick={handleNextView}
           className={`center-btn flex items-center justify-center gap-2 rounded-xl min-w-[110px] sm:min-w-[120px] md:min-w-[100px] lg:min-w-[90px] xl:min-w-[80px] 2xl:min-w-[70px] w-[clamp(70px,20vw,180px)] min-h-10 md:min-h-9 lg:min-h-8 xl:min-h-7 2xl:min-h-6 border-2 shadow-md font-medium text-[clamp(0.9rem,1.5vw,1.1rem)] 2xl:text-[clamp(0.85rem,1vw,1rem)] transition-shadow px-2 py-1 ${
-            currentSection === 'optimize-production' 
+            isNextDisabled 
               ? 'bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed' 
               : 'bg-white border-[#104A86] text-[#003366] hover:shadow-lg cursor-pointer'
           }`}
-          disabled={currentSection === 'optimize-production'}
+          disabled={isNextDisabled}
         >
             NEXT
             <svg 
@@ -161,7 +136,7 @@ const Footer: React.FC<FooterProps> = ({
               width="16" 
               height="16" 
               viewBox="0 0 24 24" 
-              style={{ fill: currentSection === 'optimize-production' ? '#6b7280' : '#003366' }}
+              style={{ fill: isNextDisabled ? '#6b7280' : '#003366' }}
             >
               <path d="M4 11h12.17l-5.59-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4v-2z"/>
             </svg>
@@ -169,7 +144,6 @@ const Footer: React.FC<FooterProps> = ({
       </div>
     </div>
 
-      {/* Architecture Popup - Renderizado en el body usando Portal */}
       {showArchitecturePopup && createPortal(
         <div 
           className="fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-80 flex items-center justify-center p-2 sm:p-4"
@@ -203,7 +177,6 @@ const Footer: React.FC<FooterProps> = ({
         document.body
       )}
 
-      {/* Approach Popup - Renderizado en el body usando Portal */}
       {showApproachPopup && createPortal(
         <div 
           className="fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-80 flex items-center justify-center p-2 sm:p-4"
@@ -230,13 +203,13 @@ const Footer: React.FC<FooterProps> = ({
                 <style>
                   {`
                     .carousel .control-dots .dot {
-                      width: 12px !important;
-                      height: 12px !important;
+                      width: 16px !important;
+                      height: 16px !important;
                     }
                     @media (min-width: 640px) {
                       .carousel .control-dots .dot {
-                        width: 16px !important;
-                        height: 16px !important;
+                        width: 24px !important;
+                        height: 24px !important;
                       }
                     }
                   `}

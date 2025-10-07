@@ -114,7 +114,8 @@ const Launchpad: React.FC = () => {
               className={`sidebar-item ${activeSection === 'overview' ? 'active' : ''}`}
               onClick={() => handleSectionChange('overview')}
             >
-              <span className="flex-1">OVERVIEW</span>
+              <span className="sidebar-number invisible">0</span>
+              OVERVIEW
             </button>
             <button 
               className={`sidebar-item ${activeSection === 'enable-data' ? 'active' : ''}`}
@@ -172,6 +173,7 @@ const Launchpad: React.FC = () => {
               className="sidebar-item"
               onClick={() => window.location.href = '/'}
             >
+              <span className="sidebar-number invisible">0</span>
               CLOSE
             </button>
           </nav>

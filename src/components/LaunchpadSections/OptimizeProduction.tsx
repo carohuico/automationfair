@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SectionStyles.css';
 import Footer from '../Footer/Footer';
 
@@ -15,11 +15,37 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
   navigationHistory = [],
   onBackClick
 }) => {
+  const [currentView, setCurrentView] = useState(0);
+  
+  // Definir las diferentes vistas para Optimize Production
+  const views = [
+    {
+      image: "/optimize.png",
+      alt: "Optimize Production - View 1"
+    },
+    {
+      image: "/camera.jpg", // Imagen temporal para prueba
+      alt: "Optimize Production - View 2"
+    },
+    {
+      image: "/timeline.PNG", // Imagen temporal para prueba
+      alt: "Optimize Production - View 3"
+    }
+  ];
+
+  const handleViewChange = (newView: number) => {
+    setCurrentView(newView);
+  };
+
   return (
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img src="/optimize.png" alt="Optimize Production" className="section-image" />
+          <img 
+            src={views[currentView].image} 
+            alt={views[currentView].alt} 
+            className="section-image" 
+          />
         </div>
       </div>
       <Footer 
@@ -28,6 +54,9 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
         currentSection={currentSection} 
         navigationHistory={navigationHistory}
         onBackClick={onBackClick}
+        currentView={currentView}
+        onViewChange={handleViewChange}
+        totalViews={views.length}
       />
     </div>
   );

@@ -36,59 +36,6 @@ html, body {
   box-sizing: border-box;
   z-index: 1000;
 }
-.hamburger-menu {
-  position: fixed;
-  top: clamp(75%, 80vh, 85%);
-  left: calc(var(--sidebar-width, clamp(280px, 25vw, 400px)) - 25px); 
-  z-index: 10002;
-  background: #d3d3d3;
-  border: 1px solid rgba(200, 200, 200, 0.5);
-  border-radius: 8px;
-  padding: clamp(0.5rem, 1vw, 1rem);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  min-width: clamp(35px, 5vw, 50px);
-  min-height: clamp(35px, 5vw, 50px);
-}
-
-.sidebar.open ~ .hamburger-menu {
-  --sidebar-width: clamp(280px, 25vw, 400px);
-}
-
-@media (min-width: 1800px) and (max-width: 2000px) and (min-height: 1000px) and (max-height: 1100px) {
-  .sidebar.open ~ .hamburger-menu {
-    --sidebar-width: 400px;
-  }
-}
-
-.hamburger-menu svg {
-    width: 18px;
-    height: 18px;
-    color: #666;
-    transition: all 0.3s ease;
-}
-
-.hamburger-menu:hover {
-    background: #d3d3d3;
-}
-
-.hamburger-menu:hover svg {
-    color: #333;
-    transform: scale(1.05);
-}
-
-.hamburger-menu.closed {
-    left: 0px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-}
-
-.hamburger-menu span {
-  display: none; 
-}
 
 .sidebar {
   width: 0;
@@ -115,7 +62,6 @@ html, body {
 }
 
 .sidebar-header {
-  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,6 +118,7 @@ html, body {
 .sidebar-item {
   display: flex;
   width: 100%;
+  min-height: clamp(2.5rem, 6vh, 3.5rem);
   padding: clamp(0.4rem, 1.5vh, 0.8rem) clamp(0.6rem, 2.5vw, 1.2rem);
   text-decoration: none;
   color: #747474;
@@ -184,6 +131,7 @@ html, body {
   font-weight: bold;
   cursor: pointer;
   align-items: center;
+  justify-content: flex-start;
   transition: all 0.3s ease;
   text-align: left;
   background: white;
@@ -209,10 +157,22 @@ html, body {
   font-size: 1.5rem;
   font-weight: bold;
   margin-right: 0.8rem;
+  min-width: 2rem;
+  text-align: center;
+  flex-shrink: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.sidebar-item:hover .sidebar-number {
+  color: white;
+}
+
+.sidebar-number.invisible {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .main-content {
@@ -243,21 +203,9 @@ html, body {
     width: 100vw !important;
   }
   
-  .sidebar.open ~ .hamburger-menu {
-    --sidebar-width: 100vw;
-  }
-  
   .main-content.sidebar-open {
     margin-left: 100vw;
     width: 0;
-  }
-  
-  .hamburger-menu {
-    left: calc(100vw - 60px);
-  }
-  
-  .hamburger-menu.closed {
-    left: 10px;
   }
   
   .sidebar-footer {
@@ -286,11 +234,7 @@ html, body {
   .sidebar.open {
     width: clamp(300px, 30vw, 350px) !important;
   }
-  
-  .sidebar.open ~ .hamburger-menu {
-    --sidebar-width: clamp(300px, 30vw, 350px);
-  }
-  
+
   .main-content.sidebar-open {
     margin-left: clamp(300px, 30vw, 350px);
     width: calc(100vw - clamp(300px, 30vw, 350px));
@@ -300,18 +244,28 @@ html, body {
 /* LG screens - Pantallas medianas */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .sidebar-item {
-    padding: 0.8rem 1.2rem !important;
+    min-height: 1.5rem !important;
+    padding: 0.5rem 1.2rem !important;
     font-size: 1.1rem !important;
     font-weight: 600 !important;
     margin: 0 0 0.8rem 1.5rem !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
   }
   
   .sidebar-number {
-    font-size: 1rem !important;
+    font-size: 2rem !important;
     font-weight: bold !important;
     margin-right: 0.5rem !important;
+    min-width: 1.8rem !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .sidebar-number.invisible {
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
   
   .sidebar-nav {
@@ -322,18 +276,28 @@ html, body {
 /* XL screens - Pantallas grandes */
 @media (min-width: 1280px) and (max-width: 1799px) {
   .sidebar-item {
-    padding: 0.8rem 1.2rem !important;
+    min-height: 1.5rem !important;
+    padding: 0.5rem 1.2rem !important;
     font-size: 1.1rem !important;
     font-weight: 600 !important;
     margin: 0 0 0.8rem 1.5rem !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
   }
   
   .sidebar-number {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     font-weight: bold !important;
     margin-right: 0.4rem !important;
+    min-width: 1.5rem !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .sidebar-number.invisible {
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
   
   .sidebar-nav {
@@ -343,31 +307,11 @@ html, body {
 
 /* Monitor ELO 43" - 1920x1080 y pantallas grandes */
 @media (min-width: 1800px) {
-  .hamburger-menu {
-    width: 50px;
-    height: 50px;
-    padding: 1rem;
-    top: 84%;
-    left: calc(var(--sidebar-width, 400px) - 50px);
-  }
-  
-  .hamburger-menu svg {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .hamburger-menu.closed {
-    left: 0px;
-  }
-  
+ 
   .sidebar.open {
     width: 400px;
   }
-  
-  .sidebar.open ~ .hamburger-menu {
-    --sidebar-width: 400px;
-  }
-  
+
   .sidebar-header,
   .sidebar-nav {
     min-width: 400px;
@@ -378,9 +322,11 @@ html, body {
   }
   
   .sidebar-item {
+    min-height: 4rem;
     padding: 1rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    justify-content: flex-start;
   }
   
   .main-content h1 {
@@ -407,6 +353,15 @@ html, body {
     max-height: calc(100vh - 220px);
     overflow-y: hidden;
     overflow-x: hidden;
+  }
+
+  .sidebar-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 0.8rem;
+    min-width: 2rem;
+    text-align: center;
+    flex-shrink: 0;
   }
 }
 

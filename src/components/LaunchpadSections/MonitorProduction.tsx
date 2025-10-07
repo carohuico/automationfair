@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
 import './SectionStyles.css';
 
@@ -15,11 +15,37 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   navigationHistory = [],
   onBackClick
 }) => {
+  const [currentView, setCurrentView] = useState(0);
+  
+  // Definir las diferentes vistas para Monitor Production
+  const views = [
+    {
+      image: "/monitor.png",
+      alt: "Monitor Production - View 1"
+    },
+    {
+      image: "/plc.webp", // Imagen temporal para prueba
+      alt: "Monitor Production - View 2"
+    },
+    {
+      image: "/sensor.webp", // Imagen temporal para prueba
+      alt: "Monitor Production - View 3"
+    }
+  ];
+
+  const handleViewChange = (newView: number) => {
+    setCurrentView(newView);
+  };
+
   return (
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img src="/monitor.png" alt="Monitor Production" className="section-image" />
+          <img 
+            src={views[currentView].image} 
+            alt={views[currentView].alt} 
+            className="section-image" 
+          />
         </div>
       </div>
       <Footer 
@@ -28,6 +54,9 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
         currentSection={currentSection} 
         navigationHistory={navigationHistory}
         onBackClick={onBackClick}
+        currentView={currentView}
+        onViewChange={handleViewChange}
+        totalViews={views.length}
       />
     </div>
   );

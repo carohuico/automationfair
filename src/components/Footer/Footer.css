@@ -92,6 +92,88 @@ div {
 }
 
 /* Responsive Design */
+/* Carousel Navigation Arrows - Wider Click Area */
+.carousel .control-arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 80px !important; /* Área más ancha para clic */
+  height: 100% !important; /* Altura completa del carousel */
+  background: rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+  z-index: 10 !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.carousel .control-arrow:hover {
+  opacity: 0.3 !important;
+}
+
+.carousel .control-arrow:before {
+  font-size: 24px !important;
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.carousel .control-prev {
+  left: 0 !important;
+}
+
+.carousel .control-next {
+  right: 0 !important;
+}
+
+/* Responsive adjustments for carousel arrows */
+@media (min-width: 640px) {
+  .carousel .control-arrow {
+    width: 100px !important;
+  }
+  
+  .carousel .control-arrow:before {
+    font-size: 28px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel .control-arrow {
+    width: 120px !important;
+  }
+  
+  .carousel .control-arrow:before {
+    font-size: 32px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel .control-arrow {
+    width: 60px !important; /*! aqui es para cambiar el ancho del area clickeable */
+  }
+  
+  .carousel .control-arrow:before {
+    font-size: 36px !important;
+  }
+}
+
+/* Additional hover effects for better UX */
+.carousel-root:hover .control-arrow {
+  opacity: 0.2 !important;
+}
+
+.carousel-root:hover .control-arrow:hover {
+  opacity: 0.6 !important;
+}
+
+/* Make the carousel container position relative to properly position arrows */
+.carousel-root {
+  position: relative !important;
+}
+
+/* Ensure arrows are always clickable even when invisible */
+.carousel .control-arrow {
+  display: block !important;
+}
+
 @media (max-width: 768px) {
   .timeline-bottom-section {
     padding: 15px 20px;
