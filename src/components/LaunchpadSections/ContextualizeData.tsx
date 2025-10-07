@@ -16,10 +16,11 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
   onBackClick
 }) => {
   const [currentView, setCurrentView] = useState(0);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
   
   const views = [
     {
-      video: "/videoContextualize.mp4",
+      video: "/videoContextualize.MP4",
       alt: "Contextualize Data - View 1"
     },
     {
@@ -30,26 +31,40 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
 
   const renderMedia = () => {
     const view = views[currentView];
+    
     if (view.video) {
       return (
-        <video
-          src={view.video}
-          autoPlay
-          muted
-          controls
-          loop
-          className="section-image"
-          style={{ 
-            width: '100%', 
-            height: 'auto',
-            maxHeight: '100%',
-            objectFit: 'contain'
-          }}
-        >
-          Sorry, your browser does not support embedded videos.
-        </video>
+        <div className="relative w-full h-full">
+          {isVideoLoading && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 rounded-lg">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+                <p className="text-gray-600 text-lg font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>Loading...</p>
+            </div>
+          )}
+          <video
+            src={view.video}
+            autoPlay
+            muted
+            controls
+            loop
+            className={`section-image transition-opacity duration-300 ${isVideoLoading ? 'opacity-0' : 'opacity-100'}`}
+            style={{ 
+              width: '100%', 
+              height: 'auto',
+              maxHeight: '100%',
+              objectFit: 'contain'
+            }}
+            onLoadStart={() => setIsVideoLoading(true)}
+            onLoadedData={() => setIsVideoLoading(false)}
+            onCanPlay={() => setIsVideoLoading(false)}
+            onError={() => setIsVideoLoading(false)}
+          >
+            Sorry, your browser does not support embedded videos.
+          </video>
+        </div>
       );
     }
+    
     if (view.image) {
       return (
         <img
@@ -59,11 +74,15 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
         />
       );
     }
+    
     return null;
   };
 
   const handleViewChange = (newView: number) => {
     setCurrentView(newView);
+    if (views[newView].video) {
+      setIsVideoLoading(true);
+    }
   };
 
   return (

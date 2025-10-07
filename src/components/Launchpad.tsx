@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Launchpad.css';
 
@@ -9,28 +9,21 @@ import MonitorProduction from './LaunchpadSections/MonitorProduction';
 import OptimizeProduction from './LaunchpadSections/OptimizeProduction';
 import Slides from './LaunchpadSections/Slides';
 import Map from './LaunchpadSections/Map';
-import Footer from './Footer/Footer';
 
 const Launchpad: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeSection, setActiveSection] = useState<string>('overview');
   const [navigationHistory, setNavigationHistory] = useState<string[]>(['overview']);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
     
-    // Actualizar historial de navegación
     setNavigationHistory(prev => {
-      // Si la sección ya está en el historial, remover todo lo que esté después de ella
       const existingIndex = prev.indexOf(section);
       if (existingIndex >= 0) {
         return prev.slice(0, existingIndex + 1);
       }
-      // Si es una nueva sección, agregarla al final
       return [...prev, section];
     });
     
@@ -58,10 +51,6 @@ const Launchpad: React.FC = () => {
         return <MonitorProduction {...commonProps} />;
       case 'optimize-production':
         return <OptimizeProduction {...commonProps} />;
-      case 'slides':
-        return <Slides />;
-      case 'map':
-        return <Map />;
       default:
         return <Overview {...commonProps} />;
     }
@@ -70,19 +59,16 @@ const Launchpad: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigateBack = () => {
-    // Usar la lógica del historial para navegar hacia atrás entre secciones
     if (navigationHistory.length > 1) {
       const currentIndex = navigationHistory.indexOf(activeSection);
       if (currentIndex > 0) {
         const previousSection = navigationHistory[currentIndex - 1];
-        // Remover la sección actual del historial
         setNavigationHistory(prev => prev.slice(0, currentIndex));
         setActiveSection(previousSection);
         return;
       }
     }
     
-    // Si no hay historial, navegar a timeline
     navigate('/timeline');
   };
 
