@@ -175,11 +175,11 @@ const Launchpad: React.FC = () => {
                 onClick={() => window.location.href = '/'}
               />
               <img
-                src="/logo-create.webp"
+                src="/logo-create.png"
                 alt="Create what's next"
                 className="sidebar-footer-logo create"
                 onError={(e) => {
-                  console.log('Error loading logo-create.webp');
+                  console.log('Error loading logo-create.png');
                   e.currentTarget.style.display = 'none';
                 }}
                 onClick={() => window.location.href = '/'}

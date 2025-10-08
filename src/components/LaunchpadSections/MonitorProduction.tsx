@@ -23,11 +23,11 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
       alt: "Monitor Production - Embedded View"
     },
     {
-      image: "/plc.webp", 
+      image: "/plc.png", 
       alt: "Monitor Production - View 2"
     },
     {
-      image: "/sensor.webp", 
+      image: "/sensor.png", 
       alt: "Monitor Production - View 3"
     }
   ];

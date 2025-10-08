@@ -22,7 +22,7 @@ const Overview: React.FC<OverviewProps> = ({
     0: {
       title: "Industrial IoT",
       description: "Connect, monitor, and manage industrial equipment and processes through intelligent sensors and connectivity solutions. Enable real-time visibility into operational performance and equipment health.",
-      image: "/logo-create.webp",
+      image: "/logo-create.png",
       alt: "Industrial IoT Solution"
     },
     1: {
@@ -34,7 +34,7 @@ const Overview: React.FC<OverviewProps> = ({
     2: {
       title: "Data Science",
       description: "Transform raw industrial data into actionable insights using advanced analytics and machine learning techniques. Drive operational excellence through data-driven decision making.",
-      image: "/logo-create.webp",
+      image: "/logo-create.png",
       alt: "Data Science Solutions"
     },
     3: {
@@ -46,7 +46,7 @@ const Overview: React.FC<OverviewProps> = ({
     4: {
       title: "What's Next for This Line",
       description: "Explore future possibilities and emerging technologies that will shape the next generation of industrial automation and digital transformation initiatives.",
-      image: "/logo-create.webp",
+      image: "/logo-create.png",
       alt: "Future Technologies"
     }
   };

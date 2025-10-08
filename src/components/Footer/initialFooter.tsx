@@ -14,7 +14,7 @@ const InitialFooter: React.FC = () => {
                     onClick={() => navigate('/splash')}
                 />
                 <img
-                    src="/logo-create.webp"
+                    src="/logo-create.png"
                     alt="Create Logo"
                     className="footer-logo"
                     onClick={() => navigate('/splash')}

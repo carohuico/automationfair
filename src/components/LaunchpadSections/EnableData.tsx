@@ -25,13 +25,13 @@ const EnableData: React.FC<EnableDataProps> = ({
     1: {
       title: "Sensor",
       description: "Enable data Collection from line systems",
-      image: "/sensor.webp",
+      image: "/sensor.png",
       alt: "Sensor"
     },
     2: {
       title: "PLC Controller", 
       description: "Line System",
-      image: "/plc.webp",
+      image: "/plc.png",
       alt: "PLC"
     },
     3: {
@@ -164,7 +164,7 @@ const EnableData: React.FC<EnableDataProps> = ({
                 >
                 <div className="p-3 flex items-start gap-4">
                   <div className="w-24 h-24 bg-white rounded-md flex-shrink-0 overflow-hidden">
-                    <img src="/sensor.webp" alt="Sensor" className="w-full h-full object-cover" />
+                    <img src="/sensor.png" alt="Sensor" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0 flex flex-col justify-start">
                     <h3 className="text-white font-semibold text-xl text-left">Sensor</h3>
@@ -201,7 +201,7 @@ const EnableData: React.FC<EnableDataProps> = ({
                 >
                 <div className="p-3 flex items-start gap-4">
                   <div className="w-24 h-24 bg-white rounded-md flex-shrink-0 flex items-center justify-center">
-                  <img src="/plc.webp" alt="PLC" className="w-full h-full object-cover" />
+                  <img src="/plc.png" alt="PLC" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0 flex flex-col justify-start">
                   <h3 className="text-white font-semibold text-xl text-left">PLC Controller</h3>
