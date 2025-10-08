@@ -34,33 +34,35 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
     
     if (view.video) {
       return (
-        <div className="relative w-full h-full">
+        <div className="flex items-center justify-center w-full h-full relative" style={{ minHeight: '100%' }}>
           {isVideoLoading && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 rounded-lg">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 rounded-lg z-10">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
-                <p className="text-gray-600 text-lg font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>Loading...</p>
+              <p className="text-gray-600 text-lg font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>Loading...</p>
             </div>
           )}
-          <video
-            src={view.video}
-            autoPlay
-            muted
-            controls
-            loop
-            className={`section-image transition-opacity duration-300 ${isVideoLoading ? 'opacity-0' : 'opacity-100'}`}
-            style={{ 
-              width: '100%', 
-              height: 'auto',
-              maxHeight: '100%',
-              objectFit: 'contain'
-            }}
-            onLoadStart={() => setIsVideoLoading(true)}
-            onLoadedData={() => setIsVideoLoading(false)}
-            onCanPlay={() => setIsVideoLoading(false)}
-            onError={() => setIsVideoLoading(false)}
-          >
-            Sorry, your browser does not support embedded videos.
-          </video>
+          <div className="flex items-center justify-center w-full h-full">
+            <video
+              src={view.video}
+              autoPlay
+              muted
+              controls
+              className={`section-image transition-opacity duration-300 ${isVideoLoading ? 'opacity-0' : 'opacity-100'}`}
+              style={{
+          width: '100%',
+          height: '100%',
+          maxHeight: '100%',
+          objectFit: 'contain',
+          display: 'block'
+              }}
+              onLoadStart={() => setIsVideoLoading(true)}
+              onLoadedData={() => setIsVideoLoading(false)}
+              onCanPlay={() => setIsVideoLoading(false)}
+              onError={() => setIsVideoLoading(false)}
+            >
+              Sorry, your browser does not support embedded videos.
+            </video>
+          </div>
         </div>
       );
     }

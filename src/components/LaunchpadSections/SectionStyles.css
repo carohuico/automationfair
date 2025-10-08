@@ -65,7 +65,6 @@
   }
 }
 
-/* Estilos para imágenes dentro del contenedor estándar */
 .standard-content-container .section-image {
   width: 100%;
   height: auto;
@@ -82,7 +81,6 @@
   display: block;
 }
 
-/* Estilos para el carousel dentro del contenedor estándar */
 .standard-content-container .carousel-container {
   width: 100%;
   height: 100%;

@@ -17,11 +17,10 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
 }) => {
   const [currentView, setCurrentView] = useState(0);
   
-  // Definir las diferentes vistas para Monitor Production
   const views = [
     {
-      image: "/retool.png",
-      alt: "Monitor Production - View 1"
+      embed: "https://rockwellautomation.retool.com/apps/Automation-Fair?_embed=true",
+      alt: "Monitor Production - Embedded View"
     },
     {
       image: "/plc.webp", 
@@ -33,6 +32,34 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     }
   ];
 
+  const renderMedia = () => {
+    const view = views[currentView];
+    if (view.embed) {
+      return (
+        <div style={{ width: '100%', height: '100%', overflow: 'auto' }}>
+          <iframe
+            title={view.alt}
+            src={view.embed}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="section-image"
+            style={{ width: '100%', height: '100%', minHeight: '300px', zoom: 1.2 }}
+          />
+        </div>
+      );
+    }
+    if (view.image) {
+      return (
+        <img 
+          src={view.image} 
+          alt={view.alt} 
+          className="section-image" 
+        />
+      );
+    }
+    return null;
+  };
+
   const handleViewChange = (newView: number) => {
     setCurrentView(newView);
   };
@@ -41,11 +68,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img 
-            src={views[currentView].image} 
-            alt={views[currentView].alt} 
-            className="section-image" 
-          />
+          {renderMedia()}
         </div>
       </div>
       <Footer 

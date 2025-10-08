@@ -65,7 +65,7 @@ const Overview: React.FC<OverviewProps> = ({
       <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <div className="flex flex-col md:flex-row items-stretch w-full gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+          {/* <div className="flex flex-col md:flex-row items-stretch w-full gap-2 sm:gap-3 md:gap-4 lg:gap-5">
             <div className="w-full md:w-3/5 bg-white rounded-lg flex flex-col justify-center h-full p-2 sm:p-3">
               <div className="flex flex-col h-full justify-center">
                 <h3 className="font-bold mb-1 sm:mb-2 md:mb-3 flex-shrink-0 text-left 
@@ -177,7 +177,12 @@ const Overview: React.FC<OverviewProps> = ({
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
+          <iframe 
+                    src="https://favorite-diversity-579304.framer.app/?y=0"
+                    // que tome todo el espacio posible
+                    style={{ width: '100%', height: '80vh', border: 'none' }}
+                  />
         </div>
       </div>
       <Footer 
