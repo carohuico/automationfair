@@ -1,17 +1,39 @@
-.initial-footer {
+.initial {
+  width: 0;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  box-sizing: border-box;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+}
+
+.initial.open {
+  width: var(--sidebar-width);
+}
+
+.initial-footer {
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: var(--sidebar-footer-width, calc(clamp(280px, 25vw, 400px) - 8px));
   background: white;
   padding: 16px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   z-index: 1000;
   height: 80px;
   box-sizing: border-box;
+  gap: 50px;
 }
 
 .initial-footer .logo-container {
@@ -20,7 +42,8 @@
   gap: 16px;
 }
 
-.initial-footer .footer-logo {
-  height: 48px;
-  cursor: pointer;
+/* Make lifecycle logo a bit smaller specifically for initial footer too */
+.initial-footer .sidebar-footer-logo.lifecycle {
+  height: 40px;
 }
+

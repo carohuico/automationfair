@@ -24,8 +24,8 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
       alt: "Contextualize Data - View 1"
     },
     {
-      image: "/Contextualize.jpg", 
-      alt: "Contextualize Data - View 2"
+      embed: "https://rockwellautomation.storylane.io/share/omnrkwajjuud",
+      alt: "Contextualize Data - Embedded View"
     },
   ];
 
@@ -67,13 +67,18 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
       );
     }
     
-    if (view.image) {
+    if (view.embed) {
       return (
-        <img
-          src={view.image}
-          alt={view.alt}
-          className="section-image"
-        />
+        <div style={{ width: '100%', height: '100%' }}>
+          <iframe
+            title={view.alt}
+            src={view.embed}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="section-image"
+            style={{ width: '100%', height: '100%', minHeight: '300px', border: 0 }}
+          />
+        </div>
       );
     }
     
