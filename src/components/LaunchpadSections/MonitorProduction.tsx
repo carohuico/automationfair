@@ -19,7 +19,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   
   const views = [
     {
-      embed: "https://rockwellautomation.retool.com/apps/Automation-Fair?_embed=true",
+      embed: "https://rockwellautomation.retool.com/embedded/public/49e04285-0560-4b68-b06c-94ce72c06a55/OEE?embed=true",
       alt: "Monitor Production - Embedded View"
     },
     {
@@ -36,14 +36,24 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     const view = views[currentView];
     if (view.embed) {
       return (
-        <div style={{ width: '100%', height: '100%', overflow: 'auto' }}>
+        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
           <iframe
             title={view.alt}
             src={view.embed}
+            loading="eager"
+            referrerPolicy="no-referrer"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="section-image"
-            style={{ width: '100%', height: '100%', minHeight: '300px', zoom: 1.2 }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: 'none',
+              zoom: 1
+            }}
           />
         </div>
       );

@@ -7,8 +7,7 @@ import EnableData from './LaunchpadSections/EnableData';
 import ContextualizeData from './LaunchpadSections/ContextualizeData';
 import MonitorProduction from './LaunchpadSections/MonitorProduction';
 import OptimizeProduction from './LaunchpadSections/OptimizeProduction';
-import Slides from './LaunchpadSections/Slides';
-import Map from './LaunchpadSections/Map';
+
 
 const Launchpad: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);

@@ -180,6 +180,8 @@ const Overview: React.FC<OverviewProps> = ({
           </div> */}
           <iframe 
                     src="https://favorite-diversity-579304.framer.app/?y=0"
+                    loading="eager"
+                    referrerPolicy="no-referrer"
                     // que tome todo el espacio posible
                     style={{ width: '100%', height: '80vh', border: 'none' }}
                   />

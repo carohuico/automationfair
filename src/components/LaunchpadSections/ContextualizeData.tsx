@@ -42,12 +42,14 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
             </div>
           )}
           <div className="flex items-center justify-center w-full h-full">
-            <video
-              src={view.video}
-              autoPlay
-              muted
-              controls
-              className={`section-image transition-opacity duration-300 ${isVideoLoading ? 'opacity-0' : 'opacity-100'}`}
+        <video
+          src={view.video}
+          preload="auto"
+          autoPlay
+          muted
+          controls
+          crossOrigin="anonymous"
+          className={`section-image transition-opacity duration-300 ${isVideoLoading ? 'opacity-0' : 'opacity-100'}`}
               style={{
           width: '100%',
           height: '100%',
