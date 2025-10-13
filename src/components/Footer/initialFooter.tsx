@@ -7,7 +7,7 @@ const InitialFooter: React.FC = () => {
         <div className="initial open">
             <div className="initial-footer">
               <img
-                src="/logo-lifecycle.png"
+                src={`${process.env.PUBLIC_URL}/logo-lifecycle.png`}
                 alt="Lifecycle Services"
                 className="sidebar-footer-logo lifecycle"
                 onError={(e) => {
@@ -17,7 +17,7 @@ const InitialFooter: React.FC = () => {
                 onClick={() => window.location.href = '/'}
               />
               <img
-                src="/logo-create.png"
+                src={`${process.env.PUBLIC_URL}/logo-create.png`}
                 alt="Create what's next"
                 className="sidebar-footer-logo create"
                 onError={(e) => {

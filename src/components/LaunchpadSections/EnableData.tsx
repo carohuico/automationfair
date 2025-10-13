@@ -29,7 +29,7 @@ const EnableData: React.FC<EnableDataProps> = ({
           )}
 
           <video
-            src="/videoEnable.mp4"
+            src={`${process.env.PUBLIC_URL}/videoEnable.mp4`}
             autoPlay
             muted
             controls
