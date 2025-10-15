@@ -13,7 +13,7 @@ const EnableData: React.FC<EnableDataProps> = ({
   handleSectionChange = () => {},
   currentSection = 'enable-data',
   navigationHistory = [],
-  onBackClick
+  onBackClick = () => {}
 }) => {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
 
@@ -21,7 +21,7 @@ const EnableData: React.FC<EnableDataProps> = ({
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          {isVideoLoading && (
+          {isVideoLoading && (  
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 rounded-lg z-10">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
               <p className="text-gray-600 text-lg font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>Loading...</p>

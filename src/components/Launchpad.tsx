@@ -156,7 +156,7 @@ const Launchpad: React.FC = () => {
             </button>
             <button 
               className="sidebar-item"
-              onClick={() => window.location.href = '/'}
+              onClick={() => window.location.href = '/automationfair'}
             >
               <span className="sidebar-number invisible">0</span>
               CLOSE
