@@ -22,7 +22,7 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
     {
       video: "/videoContextualize.MP4",
       alt: "Contextualize Data - View 1"
-    },
+    },    
     {
       embed: "https://rockwellautomation.storylane.io/share/omnrkwajjuud",
       alt: "Contextualize Data - Embedded View"
@@ -45,7 +45,6 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
         <video
           src={view.video}
           preload="auto"
-          autoPlay
           muted
           controls
           crossOrigin="anonymous"
@@ -59,9 +58,9 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
               }}
               onLoadStart={() => setIsVideoLoading(true)}
               onLoadedData={() => setIsVideoLoading(false)}
-              onCanPlay={() => setIsVideoLoading(false)}
+              onCanPlay={() => setIsVideoLoading(false)}  
               onError={() => setIsVideoLoading(false)}
-            >
+            > 
               Sorry, your browser does not support embedded videos.
             </video>
           </div>

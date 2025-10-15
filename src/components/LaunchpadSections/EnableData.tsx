@@ -30,7 +30,6 @@ const EnableData: React.FC<EnableDataProps> = ({
 
           <video
             src={`${process.env.PUBLIC_URL}/videoEnable.mp4`}
-            autoPlay
             muted
             controls
             className={`section-image transition-opacity duration-300 ${isVideoLoading ? 'opacity-0' : 'opacity-100'}`}
