@@ -31,7 +31,7 @@ const Launchpad: React.FC = () => {
     }
   };
 
-  const renderActiveSection = () => {
+  const renderAllSections = () => {
     const commonProps = {
       handleSectionChange,
       currentSection: activeSection,
@@ -39,20 +39,29 @@ const Launchpad: React.FC = () => {
       onBackClick: handleNavigateBack
     };
 
-    switch (activeSection) {
-      case 'overview':
-        return <Overview {...commonProps} />;
-      case 'enable-data':
-        return <EnableData {...commonProps} />;
-      case 'contextualize-data':
-        return <ContextualizeData {...commonProps} />;
-      case 'monitor-production':
-        return <MonitorProduction {...commonProps} />;
-      case 'optimize-production':
-        return <OptimizeProduction {...commonProps} />;
-      default:
-        return <Overview {...commonProps} />;
-    }
+    return (
+      <>
+        <div className={`launchpad-section ${activeSection === 'overview' ? 'active' : ''}`} data-section="overview">
+          <Overview {...commonProps} />
+        </div>
+
+        <div className={`launchpad-section ${activeSection === 'enable-data' ? 'active' : ''}`} data-section="enable-data">
+          <EnableData {...commonProps} />
+        </div>
+
+        <div className={`launchpad-section ${activeSection === 'contextualize-data' ? 'active' : ''}`} data-section="contextualize-data">
+          <ContextualizeData {...commonProps} />
+        </div>
+
+        <div className={`launchpad-section ${activeSection === 'monitor-production' ? 'active' : ''}`} data-section="monitor-production">
+          <MonitorProduction {...commonProps} />
+        </div>
+
+        <div className={`launchpad-section ${activeSection === 'optimize-production' ? 'active' : ''}`} data-section="optimize-production">
+          <OptimizeProduction {...commonProps} />
+        </div>
+      </>
+    );
   };
 
   const navigate = useNavigate();
@@ -131,7 +140,7 @@ const Launchpad: React.FC = () => {
             <button 
               className={`sidebar-item ${activeSection === 'monitor-production' ? 'active' : ''}`}
               onClick={() => handleSectionChange('monitor-production')}
-            >
+            > 
               <span
                 className={`sidebar-number ${
                   activeSection === 'monitor-production' ? 'text-white' : 'text-gray-400'
@@ -187,7 +196,7 @@ const Launchpad: React.FC = () => {
         </div>
 
         <div className={`main-content ${sidebarOpen ? 'sidebar-open' : ''}`}>
-          {renderActiveSection()}
+          {renderAllSections()} 
         </div>
       </div>
     </div>

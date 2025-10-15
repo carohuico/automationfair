@@ -194,6 +194,25 @@ html, body {
   position: relative;
 }
 
+/* Launchpad section container styles - all sections rendered simultaneously */
+.launchpad-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.launchpad-section.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
 .main-content.sidebar-open {
   margin-left: clamp(280px, 25vw, 400px);
   width: calc(100vw - clamp(280px, 25vw, 400px));
