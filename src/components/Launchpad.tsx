@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Launchpad.css';
 
-import Overview from './LaunchpadSections/Overview';
+import Overview2 from './LaunchpadSections/Overview2';
 import EnableData from './LaunchpadSections/EnableData';
 import ContextualizeData from './LaunchpadSections/ContextualizeData';
 import MonitorProduction from './LaunchpadSections/MonitorProduction';
@@ -42,7 +42,7 @@ const Launchpad: React.FC = () => {
     return (
       <>
         <div className={`launchpad-section ${activeSection === 'overview' ? 'active' : ''}`} data-section="overview">
-          <Overview {...commonProps} />
+          <Overview2 {...commonProps} />
         </div>
 
         <div className={`launchpad-section ${activeSection === 'enable-data' ? 'active' : ''}`} data-section="enable-data">
