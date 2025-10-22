@@ -43,10 +43,50 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                 We started with a proof-of-value at Milwaukee’s 100C contactor line where we collected, analyzed and pushed data to the Cloud using OptixEdge Advanced Edge Gateway and FactoryTalk Optix.​
             </> 
         },
-        2: { title: 'Enterprise IT/OT Convergence', description: 'Details about Enterprise IT/OT Convergence.' },
-        3: { title: 'AI Readiness Strategy', description: 'Details about AI Readiness Strategy.' },
-        4: { title: 'Industrial DataOps + AI Implementation', description: 'Details about Industrial DataOps + AI Implementation.' },
-        5: { title: 'Global Scale-Up', description: 'Details about Global Scale-Up.' },
+        2: { 
+            title: 'Enterprise IT/OT Convergence', 
+            description: <>
+                While edge devices provide insights for critical decision-making, OT data is often unstructured, fragmented, proprietary, and not easily integrated with IT enterprise architectures.​
+                <br /><br />
+                Using FactoryTalk DataMosaix we brought IT, OT and engineering technology data together which enables the convergence of OT data from the factory floor with IT data in the cloud. This leads to data-driven decision-making that can impact the entire value chain.​
+            </> 
+        },
+        3: { title: 'AI Readiness Strategy', description: <>
+            Manufacturers are finding that success in AI starts with
+            the right foundation-products with native AI and a
+            professional services team that has capabilities in
+            strategy, use case prioritization, data architecture,
+            implementation, and scalability. <br></br><br></br>
+
+            We enabled AI use cases by driving company-wide 
+            strategic alignment. <br></br><br></br>
+        </>
+         },
+        4: { title: 'Industrial DataOps + AI Implementation', description: 
+            <>
+            By using industrial internet of things (IIoT), machine learning, predictive
+            analytics and generative AI to collect and analyze data from production
+            systems, manufacturers can automate repetitive tasks, optimize resource and
+            energy usage, empower workers and improve productivity. <br></br>
+
+            We enabled moving toward autonomy with Industrial AI and data science by 
+            making data available, meaningful, useful and valuable. <br></br>
+            </>
+        },
+        5: { title: 'Global Scale-Up', description: 
+            <>
+            Recent research shows that just 25% of Industry 4.0 use cases are fully rolled
+            out or used extensively at manufacturers today. <br></br>
+
+            A true digital strategy and plan require a comprehensive, integrated yet
+            practical approach, combining new technology, skills and capabilities
+            supported by effective organizational change management. <br></br>
+
+            We leveraged our proven value-first approach, human-centric organizational
+            change management and our rapid results methodology to deliver successful
+            global scale-up of digital transformation initiatives like the 100C contactor line. <br></br>
+            </>
+         },
     };
 
     const closeModal = () => {
@@ -126,7 +166,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                         `}
                     </style>
                     <div className="
-                        relative w-full max-w-4xl max-h-[90%] mx-auto mb-28
+                        relative w-full max-w-7xl max-h-[100%] mx-auto ml-4 mr-4
                         transition-all duration-300
                         scale-100 opacity-100
                         animate-modal-in
@@ -149,28 +189,75 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                     <span className="sr-only">Close modal</span>
                                 </button>
                             </div>
-                            <div className="p-6 md:p-8">
-                                {selectedPoint != 1 &&(
-                                    <div className="flex items-start gap-6 text-xl">
-                                        {circleData[selectedPoint as keyof typeof circleData].description}
-                                    </div>
-                                )}
+                            <div className="p-6">
                                 {selectedPoint === 0 && (
-                                    <div className="mt-4">
+                                    <div>
+                                        <div className="flex items-start gap-6 lg:text-xl xl:text-2xl 2xl:text-3xl">
+                                            {circleData[selectedPoint as keyof typeof circleData].description}
+                                        </div>
                                         <img src="/discover.png" alt="Discover Illustration" className="max-w-full h-auto" />
                                     </div>
                                 )}
                                 {selectedPoint === 1 && (
-                                    <div className="flex flex-row items-center mt-4">
+                                    <div className="flex flex-row items-center">
                                         <div className="w-3/4">
-                                            <p className="flex items-start gap-6 text-xl text-left">
+                                            <div className="flex items-start lg:text-xl xl:text-2xl 2xl:text-3xl text-left">
                                                 {circleData[selectedPoint as keyof typeof circleData].description}
-                                            </p>
+                                            </div>
                                         </div>
                                         <div className="w-1/4 flex justify-center">
                                             <img src="/pop1.png" alt="Enable Data Illustration" className="max-w-full h-auto" />
                                         </div>
                                     </div>
+                                )}
+                                {selectedPoint === 2 && (
+                                    <div className="flex flex-row items-center">
+                                        <div className="w-3/4">
+                                            <div className="flex items-start lg:text-xl xl:text-2xl 2xl:text-3xl text-left">
+                                                {circleData[selectedPoint as keyof typeof circleData].description}
+                                            </div>
+                                        </div>
+                                        <div className="w-1/4 flex justify-center">
+                                            <img src="/enterprise.png" alt="Enterprise Illustration" className="max-w-full h-auto" />
+                                        </div>
+                                    </div>
+                                )}
+                                {selectedPoint === 3 && (
+                                    <div className="flex flex-row items-center">
+                                        <div className="w-3/4">
+                                            <div className="flex items-start lg:text-xl xl:text-2xl 2xl:text-3xl text-left">
+                                                {circleData[selectedPoint as keyof typeof circleData].description}
+                                            </div>
+                                        </div>
+                                        <div className="w-1/4 flex justify-center">
+                                            <img src="/ai.png" alt="AI Illustration" className="max-w-full h-auto" />
+                                        </div>
+                                    </div>
+                                )}
+                                {selectedPoint === 4 && (
+                                    <div>
+                                        <div className="flex items-start gap-6 lg:text-xl xl:text-2xl 2xl:text-3xl">
+                                            {circleData[selectedPoint as keyof typeof circleData].description}
+                                        </div>
+                                        <img src="/industrial.png" alt="Industrial DataOps + AI Illustration" className="max-w-full h-auto" />
+                                    </div>
+                                )}
+                                {selectedPoint === 5 && (
+                                    <>
+                                        <div className="flex flex-row items-center">
+                                            <div className="w-3/4">
+                                                <div className="flex items-start lg:text-base xl:text-lg 2xl:text-2xl text-left">
+                                                    {circleData[selectedPoint as keyof typeof circleData].description}
+                                                </div>
+                                            </div>
+                                            <div className="w-1/4 flex justify-center">
+                                                <img src="/human.png" alt="Human centered approach Illustration" className="max-w-full h-auto" />
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-center w-2/4 mx-auto">
+                                            <img src="/global.png" alt="Global Scale-Up Illustration" className="max-w-full h-auto mt-4" />
+                                        </div>
+                                    </>
                                 )}
                             </div>
                         </div>

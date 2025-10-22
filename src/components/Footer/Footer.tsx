@@ -171,7 +171,7 @@ const Footer: React.FC<FooterProps> = ({
             </div>
             <div className="w-full h-full flex items-center justify-center bg-gray-50 p-2 sm:p-4">
               <img 
-                src="/map.png" 
+                src="/arch.png" 
                 alt="Architecture Map" 
                 className="max-w-full max-h-full object-contain"
               />
