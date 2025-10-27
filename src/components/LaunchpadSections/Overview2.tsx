@@ -195,7 +195,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                         <div className="flex items-start gap-6 lg:text-xl xl:text-2xl 2xl:text-3xl">
                                             {circleData[selectedPoint as keyof typeof circleData].description}
                                         </div>
-                                        <img src="/discover.png" alt="Discover Illustration" className="max-w-full h-auto" />
+                                        <img src={`${process.env.PUBLIC_URL}/discover.png`} alt="Discover Illustration" className="max-w-full h-auto" />
                                     </div>
                                 )}
                                 {selectedPoint === 1 && (
@@ -206,7 +206,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                             </div>
                                         </div>
                                         <div className="w-1/4 flex justify-center">
-                                            <img src="/pop1.png" alt="Enable Data Illustration" className="max-w-full h-auto" />
+                                            <img src={`${process.env.PUBLIC_URL}/pop1.png`} alt="Enable Data Illustration" className="max-w-full h-auto" />
                                         </div>
                                     </div>
                                 )}
@@ -218,7 +218,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                             </div>
                                         </div>
                                         <div className="w-1/4 flex justify-center">
-                                            <img src="/enterprise.png" alt="Enterprise Illustration" className="max-w-full h-auto" />
+                                            <img src={`${process.env.PUBLIC_URL}/enterprise.png`} alt="Enterprise Illustration" className="max-w-full h-auto" />
                                         </div>
                                     </div>
                                 )}
@@ -230,7 +230,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                             </div>
                                         </div>
                                         <div className="w-1/4 flex justify-center">
-                                            <img src="/ai.png" alt="AI Illustration" className="max-w-full h-auto" />
+                                            <img src={`${process.env.PUBLIC_URL}/ai.png`} alt="AI Illustration" className="max-w-full h-auto" />
                                         </div>
                                     </div>
                                 )}
@@ -239,7 +239,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                         <div className="flex items-start gap-6 lg:text-xl xl:text-2xl 2xl:text-3xl">
                                             {circleData[selectedPoint as keyof typeof circleData].description}
                                         </div>
-                                        <img src="/industrial.png" alt="Industrial DataOps + AI Illustration" className="max-w-full h-auto" />
+                                        <img src={`${process.env.PUBLIC_URL}/industrial.png`} alt="Industrial DataOps + AI Illustration" className="max-w-full h-auto" />
                                     </div>
                                 )}
                                 {selectedPoint === 5 && (
@@ -251,11 +251,11 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                                 </div>
                                             </div>
                                             <div className="w-1/4 flex justify-center">
-                                                <img src="/human.png" alt="Human centered approach Illustration" className="max-w-full h-auto" />
+                                                <img src={`${process.env.PUBLIC_URL}/human.png`} alt="Human centered approach Illustration" className="max-w-full h-auto" />
                                             </div>
                                         </div>
                                         <div className="flex justify-center w-2/4 mx-auto">
-                                            <img src="/global.png" alt="Global Scale-Up Illustration" className="max-w-full h-auto mt-4" />
+                                            <img src={`${process.env.PUBLIC_URL}/global.png`} alt="Global Scale-Up Illustration" className="max-w-full h-auto mt-4" />
                                         </div>
                                     </>
                                 )}
@@ -297,9 +297,9 @@ const sections: SectionData[] = [
                         Every transformation journey starts with<br></br> collecting the right information. <br></br><br></br> But data acquisition and monitoring are<br></br> only the first steps.
                     </p>
                   </div>
-                  <div className='w-1/4 flex justify-center'>
-                    <img src="/image1.gif" alt="BOM Illustration" className="max-w-full h-auto" />
-                  </div>
+                                    <div className='w-1/4 flex justify-center'>
+                                        <img src={`${process.env.PUBLIC_URL}/image1.gif`} alt="BOM Illustration" className="max-w-full h-auto" />
+                                    </div>
                 </div>
             </>
         ),
@@ -314,9 +314,9 @@ const sections: SectionData[] = [
             <>
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black mb-12 text-right leading-loose" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Contextualize</h3>
                 <div className="flex flex-row items-center">
-                  <div className='w-1/4 flex justify-center'>
-                      <img src="/image4.png" alt="Contextualize Illustration" className="max-w-full h-auto" />
-                  </div>
+                                    <div className='w-1/4 flex justify-center'>
+                                        <img src={`${process.env.PUBLIC_URL}/image4.png`} alt="Contextualize Illustration" className="max-w-full h-auto" />
+                                    </div>
                   <div className='w-3/4'>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-right aligning-left leading-loose">
                         Bringing data from IT systems, visual media, manuals, engineering diagrams, and OT together to make data-driven decisions and react immediately. <br></br>But we wanted to go beyond being reactive.
@@ -341,9 +341,9 @@ const sections: SectionData[] = [
                         The real value behind using data is in strategically applying AI and Machine Learning algorithms that leverage all that consolidated information to predict behavior and accelerate root cause analysis. <br></br>The engineering team can now proactively overcome challenges before they become a problem.
                     </p>
                   </div>
-                  <div className='w-1/4 flex justify-center'>
-                    <img src="/image6.gif" alt="AI Innovation Illustration" className="max-w-full h-auto" />
-                  </div>
+                                    <div className='w-1/4 flex justify-center'>
+                                        <img src={`${process.env.PUBLIC_URL}/image6.gif`} alt="AI Innovation Illustration" className="max-w-full h-auto" />
+                                    </div>
                 </div>
             </>
         ),
@@ -365,7 +365,7 @@ const sections: SectionData[] = [
                 </p>
                 <ScalableDigitalSolutions
                 title="Scalable Digital Solutions"
-                imageSrc="/bom.gif"
+                imageSrc={`${process.env.PUBLIC_URL}/bom.gif`}
                 points={[
                     { label: <>Discover and Assess</> },
                     { label: <>Edge to Cloud<br />Enablement</> },
