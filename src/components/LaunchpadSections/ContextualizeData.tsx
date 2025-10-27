@@ -24,7 +24,7 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
       alt: "Contextualize Data - View 1"
     },    
     {
-      embed: "https://app.storylane.io/demo/9e7wevzx7gnt?embed=inline",
+      embed: "https://rockwellautomation.storylane.io/share/kjvnbv7ir4oj",
       alt: "Contextualize Data - Embedded View"
     },
   ];
