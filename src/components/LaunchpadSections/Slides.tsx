@@ -19,13 +19,13 @@ const Slides: React.FC = () => {
             </style>
             <Carousel showThumbs={false} infiniteLoop>
             <div>
-              <img src="/slide1.PNG" alt="Slide 1" className="section-image" />
+              <img src={`${process.env.PUBLIC_URL}/slide1.png`} alt="Slide 1" className="section-image" />
             </div>
             {/* <div>
-              <img src="/slide2.png" alt="Slide 2" className="section-image" />
+              <img src={`${process.env.PUBLIC_URL}/slide2.png`} alt="Slide 2" className="section-image" />
             </div> */}
             <div>
-              <img src="/slide3.PNG" alt="Slide 3" className="section-image" />
+              <img src={`${process.env.PUBLIC_URL}/slide3.png`} alt="Slide 3" className="section-image" />
             </div>
             </Carousel>
           </div>

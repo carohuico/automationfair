@@ -6,7 +6,7 @@ const Map: React.FC = () => {
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img src="/map.png" alt="Map" className="section-image" />
+          <img src={`${process.env.PUBLIC_URL}/map.png`} alt="Map" className="section-image" />
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ const TimelinePage: React.FC = () => {
       >
         <div className="w-full h-full flex items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6 xl:p-8 2xl:p-2">
           <img 
-            src="/timeline.png" 
+            src={`${process.env.PUBLIC_URL}/timeline.png`} 
             alt="Timeline" 
             className="max-w-full max-h-full object-contain w-auto h-auto 2xl:w-full 2xl:h-full 2xl:object-cover"
           />

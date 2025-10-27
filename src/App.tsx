@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
         <div className="container" onClick={handleContainerClick}>
           <p className="learn-text">
             LEARN HOW TO <br />
-            <img src="/accelerate-logo.png" alt="Accelerate Logo" className="accelerate-logo" />
+            <img src={`${process.env.PUBLIC_URL}/accelerate-logo.png`} alt="Accelerate Logo" className="accelerate-logo" />
           </p>
         </div>  
       </div>
@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/automationfair">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/splash" element={<Splash />} />

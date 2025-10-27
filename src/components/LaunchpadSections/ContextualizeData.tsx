@@ -20,7 +20,7 @@ const ContextualizeData: React.FC<ContextualizeDataProps> = ({
   
   const views = [
     {
-      video: "/videoContextualize.MP4",
+      video: `${process.env.PUBLIC_URL}/videoContextualize.MP4`,
       alt: "Contextualize Data - View 1"
     },    
     {

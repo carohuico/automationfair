@@ -14,7 +14,7 @@ const Splash: React.FC = () => {
     <>
       <div className="splash-container" onClick={handleNavigateToTimeline}>
         <div className="splash-img-container">
-          <img src="/splash1.png" alt="Splash" className="splash-image" />
+          <img src={`${process.env.PUBLIC_URL}/splash1.png`} alt="Splash" className="splash-image" />
         </div>
       </div>
       <InitialFooter />

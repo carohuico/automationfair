@@ -22,31 +22,31 @@ const Overview: React.FC<OverviewProps> = ({
     0: {
       title: "Industrial IoT",
       description: "Connect, monitor, and manage industrial equipment and processes through intelligent sensors and connectivity solutions. Enable real-time visibility into operational performance and equipment health.",
-      image: "/logo-create.png",
+  image: `${process.env.PUBLIC_URL}/logo-create.png`,
       alt: "Industrial IoT Solution"
     },
     1: {
       title: "Digital Twin",
       description: "Create virtual representations of physical assets and processes to simulate, predict, and optimize performance. Bridge the gap between the physical and digital worlds for enhanced decision-making.",
-      image: "/logo-lifecycle.png", 
+  image: `${process.env.PUBLIC_URL}/logo-lifecycle.png`, 
       alt: "Digital Twin Technology"
     },
     2: {
       title: "Data Science",
       description: "Transform raw industrial data into actionable insights using advanced analytics and machine learning techniques. Drive operational excellence through data-driven decision making.",
-      image: "/logo-create.png",
+  image: `${process.env.PUBLIC_URL}/logo-create.png`,
       alt: "Data Science Solutions"
     },
     3: {
       title: "Industrial AI",
       description: "Deploy artificial intelligence solutions designed specifically for industrial environments. Automate complex processes, predict failures, and optimize production efficiency.",
-      image: "/logo-lifecycle.png",
+  image: `${process.env.PUBLIC_URL}/logo-lifecycle.png`,
       alt: "Industrial AI Technology"
     },
     4: {
       title: "What's Next for This Line",
       description: "Explore future possibilities and emerging technologies that will shape the next generation of industrial automation and digital transformation initiatives.",
-      image: "/logo-create.png",
+  image: `${process.env.PUBLIC_URL}/logo-create.png`,
       alt: "Future Technologies"
     }
   };
@@ -86,7 +86,7 @@ const Overview: React.FC<OverviewProps> = ({
             <div className="w-full md:w-2/5 flex items-center justify-center h-16 sm:h-16 xl:h-56 2xl:h-96 md:h-20 lg:h-48">
               <div className="bg-white rounded-lg flex items-center w-full h-full p-1 sm:p-2 md:p-3">
                 <img
-                  src="/bom.gif"
+                  src={`${process.env.PUBLIC_URL}/bom.gif`}
                   alt="Arrow Down"
                   className="object-contain w-full h-full max-h-full"
                 />

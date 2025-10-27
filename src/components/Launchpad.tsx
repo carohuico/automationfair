@@ -101,7 +101,7 @@ const Launchpad: React.FC = () => {
 
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
-              <img src="/accelerate-logo.png" alt="Logo" className="sidebar-logo" />
+              <img src={`${process.env.PUBLIC_URL}/accelerate-logo.png`} alt="Logo" className="sidebar-logo" />
           </div>
           <nav className="sidebar-nav">
             <button 
@@ -165,7 +165,7 @@ const Launchpad: React.FC = () => {
             </button>
             <button 
               className="sidebar-item"
-              onClick={() => window.location.href = '/'}
+              onClick={() => window.location.href = '/automationfair'}
             >
               <span className="sidebar-number invisible">0</span>
               CLOSE
@@ -173,7 +173,7 @@ const Launchpad: React.FC = () => {
           </nav>
             <div className="sidebar-footer">
               <img
-                src="/logo-lifecycle.png"
+                src={`${process.env.PUBLIC_URL}/logo-lifecycle.png`}
                 alt="Lifecycle Services"
                 className="sidebar-footer-logo lifecycle"
                 onError={(e) => {
@@ -183,7 +183,7 @@ const Launchpad: React.FC = () => {
                 onClick={() => window.location.href = '/'}
               />
               <img
-                src="/logo-create.png"
+                src={`${process.env.PUBLIC_URL}/logo-create.png`}
                 alt="Create what's next"
                 className="sidebar-footer-logo create"
                 onError={(e) => {

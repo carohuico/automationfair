@@ -19,11 +19,11 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
   
   const views = [
     {
-      image: "/optimize.png",
+  image: `${process.env.PUBLIC_URL}/optimize.png`,
       alt: "Optimize Production - View 1"
     },
     {
-      image: "/temp.png", 
+  image: `${process.env.PUBLIC_URL}/temp.png`, 
       alt: "Optimize Production - View 3"
     }
   ];
