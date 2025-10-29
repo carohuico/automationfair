@@ -230,7 +230,7 @@ const Overview: React.FC<OverviewProps> = ({
               background: "linear-gradient(90deg, #62CCEF 50px, #84E291 50%)"
               }}>
               {/* Modal header */}
-              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-300">
                 <h3 className="text-2xl font-semibold text-white">
                 {circleData[selectedPoint as keyof typeof circleData].title}
                 </h3>

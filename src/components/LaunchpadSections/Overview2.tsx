@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
-import { ChevronLeft, ChevronRight, Zap, Database, Globe, Cpu, Award } from 'lucide-react';
-import { animateScroll as scroll } from 'react-scroll';
 
-const Modal: React.FC<{ title: string }> = ({ title }) => {
-    return (
-        <div className="modal">
-            <h2>{title}</h2>
-        </div>
-    );
-};
+// const Modal: React.FC<{ title: string }> = ({ title }) => {
+//     return (
+//         <div className="modal">
+//             <h2>{title}</h2>
+//         </div>
+//     );
+// };
 
 
 interface OverviewProps {
@@ -102,7 +100,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
 
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 gap-8 justify-items-center mb-2">
                 {points.map((item, idx) => (
                     <div key={idx} className="relative flex flex-col items-center justify-center flex-shrink-0">
                         <div
@@ -111,8 +109,8 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 setSelectedPoint(idx);
                             }}
                             className="
-                            circle flex items-center justify-center rounded-full shadow-lg
-                            hover:cursor-pointer hover:scale-105 transition-all duration-300
+                            circle flex items-center justify-center rounded-full
+                            hover:cursor-pointer transition-all duration-300
                             
                             w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-56 2xl:h-56
                             
@@ -122,14 +120,14 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                             </span>
                             <div className="
                                 absolute -bottom-0.5 -right-0.5 sm:-bottom-1 sm:-right-1
-                                flex items-center justify-center rounded-full border-2 border-white bg-white shadow-md z-10
+                                flex items-center justify-center rounded-full border-2 border-white bg-white shadow-lg z-10
                                 
                                 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-14 2xl:h-14">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    strokeWidth="2.5"
+                                    strokeWidth="3"
                                     stroke="#6b7280"
                                     className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-3.5 xl:h-3.5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -174,7 +172,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                         <div className="relative rounded-lg shadow-lg" style={{
                             background: "white",
                         }}>
-                            <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                            <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-300">
                                 <h3 className="text-2xl font-semibold text-black">
                                     {circleData[selectedPoint as keyof typeof circleData].title}
                                 </h3>
@@ -192,7 +190,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                             <div className="p-6">
                                 {selectedPoint === 0 && (
                                     <div>
-                                        <div className="flex items-start gap-6 lg:text-xl xl:text-2xl 2xl:text-3xl">
+                                        <div className="flex items-start gap-6 lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                             {circleData[selectedPoint as keyof typeof circleData].description}
                                         </div>
                                         <img src={`${process.env.PUBLIC_URL}/discover.png`} alt="Discover Illustration" className="max-w-full h-auto" />
@@ -201,7 +199,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 {selectedPoint === 1 && (
                                     <div className="flex flex-row items-center">
                                         <div className="w-3/4">
-                                            <div className="flex items-start lg:text-xl xl:text-2xl 2xl:text-3xl text-left">
+                                            <div className="flex items-start lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                                 {circleData[selectedPoint as keyof typeof circleData].description}
                                             </div>
                                         </div>
@@ -213,7 +211,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 {selectedPoint === 2 && (
                                     <div className="flex flex-row items-center">
                                         <div className="w-3/4">
-                                            <div className="flex items-start lg:text-xl xl:text-2xl 2xl:text-3xl text-left">
+                                            <div className="flex items-start lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                                 {circleData[selectedPoint as keyof typeof circleData].description}
                                             </div>
                                         </div>
@@ -225,7 +223,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 {selectedPoint === 3 && (
                                     <div className="flex flex-row items-center">
                                         <div className="w-3/4">
-                                            <div className="flex items-start lg:text-xl xl:text-2xl 2xl:text-3xl text-left">
+                                            <div className="flex items-start lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                                 {circleData[selectedPoint as keyof typeof circleData].description}
                                             </div>
                                         </div>
@@ -236,7 +234,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 )}
                                 {selectedPoint === 4 && (
                                     <div>
-                                        <div className="flex items-start gap-6 lg:text-xl xl:text-2xl 2xl:text-3xl">
+                                        <div className="flex items-start gap-6 lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                             {circleData[selectedPoint as keyof typeof circleData].description}
                                         </div>
                                         <img src={`${process.env.PUBLIC_URL}/industrial.png`} alt="Industrial DataOps + AI Illustration" className="max-w-full h-auto" />
@@ -246,7 +244,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                     <>
                                         <div className="flex flex-row items-center">
                                             <div className="w-3/4">
-                                                <div className="flex items-start lg:text-base xl:text-lg 2xl:text-2xl text-left">
+                                                <div className="flex items-start lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                                     {circleData[selectedPoint as keyof typeof circleData].description}
                                                 </div>
                                             </div>
@@ -380,6 +378,60 @@ const sections: SectionData[] = [
         color: 'white',
         textColor: 'text-gray-800'
     },
+    {
+        id: 'view-6',
+        title: 'Results',
+        content: (
+            <>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black mb-12 leading-loose">Results</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl p-6 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
+                    <div className="flex flex-col items-center text-white">
+                        <div className="flex flex-row items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light leading-loose">
+                                80% reduction in time to access 
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex flex-row items-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light leading-loose">
+                                20% reduction in unplanned downtime
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex flex-row items-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light leading-loose">
+                                30% faster root cause analysis
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex flex-row items-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light leading-loose">
+                                25% increase in overall effectiveness
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </>
+        ),
+        color: 'white',
+        textColor: 'text-gray-900',
+        alignment: 'center'
+    }
 ];
 
 const ScrollableView: React.FC = () => {

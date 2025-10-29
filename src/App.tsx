@@ -28,7 +28,8 @@ const HomePage: React.FC = () => {
 
 function App() {
   return (
-    <Router basename="/automationfair">
+    
+    <Router basename="/"> 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/splash" element={<Splash />} />

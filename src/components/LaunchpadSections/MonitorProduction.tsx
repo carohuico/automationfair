@@ -22,14 +22,10 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
       embed: "https://rockwellautomation.retool.com/embedded/public/49e04285-0560-4b68-b06c-94ce72c06a55/OEE?embed=true",
       alt: "Monitor Production - Embedded View"
     },
-    {
-      image: `${process.env.PUBLIC_URL}/plc.png`, 
-      alt: "Monitor Production - View 2"
-    },
-    {
-      image: `${process.env.PUBLIC_URL}/sensor.png`, 
-      alt: "Monitor Production - View 3"
-    }
+    // {
+    //   image: `${process.env.PUBLIC_URL}/plc.png`, 
+    //   alt: "Monitor Production - View 2"
+    // },
   ];
 
   const renderMedia = () => {
@@ -58,15 +54,15 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
         </div>
       );
     }
-    if (view.image) {
-      return (
-        <img 
-          src={view.image} 
-          alt={view.alt} 
-          className="section-image" 
-        />
-      );
-    }
+    // if (view.image) {
+    //   return (
+    //     <img 
+    //       src={view.image} 
+    //       alt={view.alt} 
+    //       className="section-image" 
+    //     />
+    //   );
+    // }
     return null;
   };
 

@@ -25,6 +25,10 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
     {
   image: `${process.env.PUBLIC_URL}/temp.png`, 
       alt: "Optimize Production - View 3"
+    },
+    {
+      video: `${process.env.PUBLIC_URL}/videoEnable.mp4`,
+      alt: "Optimize Production - Video"
     }
   ];
 
@@ -36,11 +40,22 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
     <div className="section-container">
       <div className="img-container">
         <div className="standard-content-container">
-          <img 
-            src={views[currentView].image} 
-            alt={views[currentView].alt} 
-            className="section-image" 
-          />
+          {('video' in views[currentView]) ? (
+            // @ts-ignore - views item can be image or video
+            <video
+              src={(views as any)[currentView].video}
+              className="section-image"
+              controls
+              playsInline
+              preload="metadata"
+            />
+          ) : (
+            <img 
+              src={(views as any)[currentView].image} 
+              alt={(views as any)[currentView].alt} 
+              className="section-image" 
+            />
+          )}
         </div>
       </div>
       <Footer 

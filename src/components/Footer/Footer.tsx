@@ -28,7 +28,6 @@ const Footer: React.FC<FooterProps> = ({
   //internal navigation sections
   const sectionsWithInternalNavigation = [
     'contextualize-data',
-    'monitor-production', 
     'optimize-production'
   ];
 
