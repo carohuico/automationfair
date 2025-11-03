@@ -164,8 +164,22 @@ const Launchpad: React.FC = () => {
               OPTIMIZE PRODUCTION
             </button>
             <button 
+              type="button"
               className="sidebar-item"
-              onClick={() => window.location.href = '/automationfair'}
+              onClick={() => {
+                try {
+                  // Best-effort close: some browsers only allow window.close() for windows opened via script.
+                  window.open('', '_self');
+                  window.close();
+                  setTimeout(() => {
+                    if (typeof window !== 'undefined' && !document.hidden) {
+                      window.location.href = '/';
+                    }
+                  }, 500);
+                } catch (e) {
+                  window.location.href = '/';
+                }
+              }}
             >
               <span className="sidebar-number invisible">0</span>
               CLOSE

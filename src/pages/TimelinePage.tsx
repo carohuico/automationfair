@@ -11,12 +11,12 @@ const TimelinePage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <div className="flex flex-col h-[100vh] overflow-hidden align-center justify-center">
       <div 
-        className="flex-1 cursor-pointer overflow-auto bg-white mb-24"
+        className="flex-1 cursor-pointer overflow-auto bg-white mb-8"
         onClick={handleNavigatetoLaunchpad}
       >
-        <div className="w-full h-full flex items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6 xl:p-8 2xl:p-2">
+        <div className="w-full h-full flex items-center justify-center">
           <img 
             src={`${process.env.PUBLIC_URL}/timeline.png`} 
             alt="Timeline" 

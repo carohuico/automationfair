@@ -264,11 +264,11 @@ const sections: SectionData[] = [
         title: 'Welcome to our Digital Core Solutions experience.',
         content: (
           <>
-            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mb-2 2xl:text-5xl font-extrabold text-black 2xl:mb-8 leading-loose mt-2">Welcome to our<br></br> Digital Scalable Solutions experience.</h3>  
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose mt-2">
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mb-2 2xl:text-5xl font-extrabold text-black 2xl:mb-6 leading-loose 2xl:mt-8 xl:mt-2">Welcome to our<br></br> Digital Scalable Solutions experience.</h3>  
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose">
                 In just a few minutes, you will discover how we accelerated future innovation by investing in leveraging data and AI to empower engineers, reduce downtime, and optimize production for Rockwell Automation's 100C production line. 
             </p>
-            <div className="mt-6 w-full h-64 sm:h-80 md:h-56 xl:h-[200px] 2xl:h-[720px] 2xl:mt-10">
+            <div className="mt-6 w-full h-64 sm:h-80 md:h-56 xl:h-[200px] 2xl:h-[680px] 2xl:mt-6  justify-center items-center">
                 <img src={`${process.env.PUBLIC_URL}/line.jpg`} alt="Overview Illustration" className="w-full h-full object-cover" />
             </div>
           </>
@@ -380,44 +380,44 @@ const sections: SectionData[] = [
         title: 'Results',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-8 2xl:mt-6 text-center">Results</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:gap-24 2xl:gap-32 w-full max-w-4xl xl:p-12 2xl:p-24 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-full font-bold leading-loose xl:mb-4 2xl:mb-8  text-center">What we have achieved</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:gap-24 2xl:gap-32 w-full max-w-6xl xl:p-12 2xl:p-24 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
                     <div className="flex flex-col items-center text-white">
-                        <div className="flex flex-row items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-36">
+                        <div className="flex flex-row items-center justify-center 2xl:h-[150px] xl:h-[70px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-28">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
                             </svg>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light text-left ml-4 leading-loose">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl font-light text-left ml-4 leading-loose">
                                 10% Reduced unplanned downtime 
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center justify-center 2xl:h-[150px] xl:h-[70px]">
                         <div className="flex flex-row items-center text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-36">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-20">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light text-left ml-4 leading-loose">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl font-light text-left ml-4 leading-loose">
                                 25% Lower M&R costs
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center justify-center 2xl:h-[150px] xl:h-[70px]">
                         <div className="flex flex-row items-center text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-36">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-28">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light text-left ml-4 leading-loose">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl font-light text-left ml-4 leading-loose">
                                 20% Reduced spares & inventory
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center justify-center 2xl:h-[150px] xl:h-[70px]">
                         <div className="flex flex-row items-center text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-36">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="xl:size-12 2xl:size-28">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
                             </svg>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-light text-left ml-4 leading-loose">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl font-light text-left ml-4 leading-loose">
                                 55% FTE Time Efficiency
                             </p>
                         </div>
@@ -472,7 +472,7 @@ const ScrollableView: React.FC = () => {
                     className={`h-full w-full flex flex-col items-center justify-center p-4 md:p-8 snap-start transition-all duration-300 bg-${section.color} ${section.textColor}`}
                     onClick={() => handleScrollToSection(section.id)}
                 >
-                    <div className={`text-${section.alignment || 'center'} max-w-8xl px-2 max-h-full flex flex-col justify-center overflow-hidden`}>
+                    <div className={`text-${section.alignment || 'center'} max-w-8xl px-2 max-h-full flex flex-col justify-center align-center overflow-hidden`}>
                         {section.content}
                     </div>
                 </section>

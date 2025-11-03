@@ -18,6 +18,10 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
   const [currentView, setCurrentView] = useState(0);
   
   const views = [
+        {
+      video: `${process.env.PUBLIC_URL}/videoEnable.mp4`,
+      alt: "Optimize Production - Video"
+    },
     {
   image: `${process.env.PUBLIC_URL}/optimize.png`,
       alt: "Optimize Production - View 1"
@@ -25,10 +29,6 @@ const OptimizeProduction: React.FC<OptimizeProductionProps> = ({
     {
   image: `${process.env.PUBLIC_URL}/temp.png`, 
       alt: "Optimize Production - View 3"
-    },
-    {
-      video: `${process.env.PUBLIC_URL}/videoEnable.mp4`,
-      alt: "Optimize Production - Video"
     }
   ];
 

@@ -14,7 +14,7 @@ const InitialFooter: React.FC = () => {
                   console.log('Error loading logo-lifecycle.png');
                   e.currentTarget.style.display = 'none';
                 }}
-                onClick={() => window.location.href = '/automationfair'}
+                onClick={() => window.location.href = '/'}
               />
               <img
                 src={`${process.env.PUBLIC_URL}/logo-create.png`}
@@ -24,7 +24,7 @@ const InitialFooter: React.FC = () => {
                   console.log('Error loading logo-create.png');
                   e.currentTarget.style.display = 'none';
                 }}
-                onClick={() => window.location.href = '/automationfair'}
+                onClick={() => window.location.href = '/'}
               />
             </div>
         </div>
