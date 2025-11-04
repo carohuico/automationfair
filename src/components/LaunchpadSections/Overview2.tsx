@@ -264,12 +264,17 @@ const sections: SectionData[] = [
         title: 'Welcome to our Digital Core Solutions experience.',
         content: (
           <>
-            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mb-2 2xl:text-5xl font-extrabold text-black 2xl:mb-6 leading-loose 2xl:mt-8 xl:mt-2">Welcome to our<br></br> Digital Scalable Solutions experience.</h3>  
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mb-2 2xl:text-5xl font-extrabold text-black 2xl:mb-6 leading-loose 2xl:mt-8 xl:mt-2 text-center">Welcome to our<br></br> Digital Scalable Solutions experience.</h3>  
             <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose">
                 In just a few minutes, you will discover how we accelerated future innovation by investing in leveraging data and AI to empower engineers, reduce downtime, and optimize production for Rockwell Automation's 100C production line. 
             </p>
-            <div className="mt-6 w-full h-64 sm:h-80 md:h-56 xl:h-[200px] 2xl:h-[680px] 2xl:mt-6  justify-center items-center">
-                <img src={`${process.env.PUBLIC_URL}/line.jpg`} alt="Overview Illustration" className="w-full h-full object-cover" />
+            <div className="mt-6 w-full flex items-center justify-center max-w-6xl mx-auto">
+                <div className="w-full flex items-center justify-center">
+                    <video autoPlay muted loop playsInline preload="metadata" className="w-full max-h-[40vh] sm:max-h-[50vh] md:max-h-[55vh] lg:max-h-[60vh] xl:max-h-[30vh] 2xl:max-h-[60vh] object-contain">
+                        <source src={`${process.env.PUBLIC_URL}/line.mp4`} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
           </>
         ),
@@ -282,7 +287,7 @@ const sections: SectionData[] = [
         title: 'Enable Data',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-left leading-loose mt-6" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Enable Data</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-left leading-loose mt-6 w-full" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Enable Data</h3>
                 <div className="flex flex-row items-center">
                   <div className='xl:w-3/4 2xl:w-3/4'>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-left aligning-left leading-loose">
@@ -308,7 +313,7 @@ const sections: SectionData[] = [
         title: 'Contextualize',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-right leading-loose xl:mb-6 2xl:mb-0" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Contextualize</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-right leading-loose xl:mb-6 2xl:mb-0 w-full" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Contextualize</h3>
                 <div className="flex flex-row items-center">
                     <div className='xl:w-1/2 2xl:w-1/2 flex justify-center mt-2'>
                         <video autoPlay muted loop className="max-w-full h-auto">
@@ -333,7 +338,7 @@ const sections: SectionData[] = [
         title: 'Accelerate Innovation with AI',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-left leading-loose mt-24 xl:mb-2 2xl:mb-8" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Accelerate Innovation with AI</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-left leading-loose mt-24 xl:mb-2 2xl:mb-8 w-full" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Accelerate Innovation with AI</h3>
                 <div className="flex flex-row items-center">
                   <div className='xl:w-3/4 2xl:w-3/4'>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-left aligning-left leading-loose">
@@ -478,7 +483,7 @@ const ScrollableView: React.FC = () => {
                     className={`h-full w-full flex flex-col items-center justify-center p-4 md:p-8 snap-start transition-all duration-300 bg-${section.color} ${section.textColor}`}
                     onClick={() => handleScrollToSection(section.id)}
                 >
-                    <div className={`text-${section.alignment || 'center'} max-w-8xl px-2 max-h-full flex flex-col justify-center align-center overflow-hidden`}>
+                    <div className={`text-${section.alignment || 'center'} max-w-8xl px-2 max-h-full flex flex-col justify-center items-center overflow-hidden`}>
                         {section.content}
                     </div>
                 </section>

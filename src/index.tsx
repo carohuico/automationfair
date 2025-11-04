@@ -40,7 +40,7 @@ try {
     '/timeline.png',
   ];
 
-  const VIDEOS = ['/videoContextualize.MP4', '/videoEnable.mp4', '/enable.mp4', '/image1.mp4', '/image6.mp4'];
+  const VIDEOS = ['/videoContextualize.MP4', '/videoEnable.mp4', '/enable.mp4', '/image1.mp4', '/image6.mp4', '/line.mp4'];
 
   const EMBED_URLS = [
     'https://rockwellautomation.storylane.io/share/omnrkwajjuud',
