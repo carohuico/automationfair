@@ -32,15 +32,15 @@ try {
     '/retool.png',
     '/sensor.png',
     '/sensor.webp',
-    '/slide1.png',
+    '/slide1.PNG',
     '/slide2.png',
-    '/slide3.png',
+    '/slide3.PNG',
     '/splash1.png',
     '/temp.png',
     '/timeline.png',
   ];
 
-  const VIDEOS = ['/videoContextualize.MP4', '/videoEnable.mp4'];
+  const VIDEOS = ['/videoContextualize.MP4', '/videoEnable.mp4', '/enable.mp4', '/image1.mp4', '/image6.mp4'];
 
   const EMBED_URLS = [
     'https://rockwellautomation.storylane.io/share/omnrkwajjuud',

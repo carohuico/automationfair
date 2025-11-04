@@ -220,10 +220,10 @@ const Footer: React.FC<FooterProps> = ({
                 <div className="w-full flex flex-col items-center justify-center">
                   <Carousel showThumbs={false} infiniteLoop>
                     <div className="flex items-center justify-center">
-                      <img src={`${process.env.PUBLIC_URL}/slide1.png`} alt="Slide 1" className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-[75vh] xl:max-h-[80vh] 2xl:max-h-[85vh] object-contain" />
+                      <img src={`${process.env.PUBLIC_URL}/slide1.PNG`} alt="Slide 1" className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-[75vh] xl:max-h-[80vh] 2xl:max-h-[85vh] object-contain" />
                     </div>
                     <div className="flex items-center justify-center">
-                      <img src={`${process.env.PUBLIC_URL}/slide3.png`} alt="Slide 2" className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-[75vh] xl:max-h-[80vh] 2xl:max-h-[85vh] object-contain" />
+                      <img src={`${process.env.PUBLIC_URL}/slide3.PNG`} alt="Slide 2" className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-[75vh] xl:max-h-[80vh] 2xl:max-h-[85vh] object-contain" />
                     </div>
                   </Carousel>
                 </div>

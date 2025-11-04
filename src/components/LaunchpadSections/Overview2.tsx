@@ -282,18 +282,18 @@ const sections: SectionData[] = [
         title: 'Enable Data',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black mb-4 text-left leading-loose" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Enable Data</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-left leading-loose mt-6" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Enable Data</h3>
                 <div className="flex flex-row items-center">
                   <div className='xl:w-3/4 2xl:w-3/4'>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-left aligning-left leading-loose">
                         Every transformation journey starts with<br></br> collecting the right information. <br></br><br></br> But data acquisition and monitoring are<br></br> only the first steps.<br></br><br></br><br></br><br></br><br></br><br></br>
                     </p>
                   </div>
-                        <br></br><br></br><br></br><br></br>
-                        <div className='xl:w-1/2 2xl:w-1/2 flex justify-center mt-40'>
-                            <video autoPlay loop muted playsInline preload="metadata" className="max-w-full h-auto object-contain">
-                                <source src={`${process.env.PUBLIC_URL}/videoEnable.mp4`} type="video/mp4" />
-                                Tu navegador no soporta el elemento de video.
+                        <br></br><br></br>
+                        <div className='xl:w-1/2 2xl:w-1/2 flex justify-center mt-16'>
+                            <video autoPlay muted loop className="max-w-full h-auto">
+                                <source src={`${process.env.PUBLIC_URL}/enable.mp4`} type="video/mp4" />
+                                Your browser does not support the video tag.
                             </video>
                         </div>
                 </div>
@@ -308,12 +308,15 @@ const sections: SectionData[] = [
         title: 'Contextualize',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black mb-6 text-right leading-loose" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Contextualize</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-right leading-loose xl:mb-6 2xl:mb-0" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Contextualize</h3>
                 <div className="flex flex-row items-center">
-                    <div className='xl:w-1/2 2xl:w-1/2 flex justify-center 2xl:mt-32 xl:mt-24'>
-                        <img src={`${process.env.PUBLIC_URL}/image1.gif`} alt="AI Innovation Illustration" className="max-w-full h-auto" />
+                    <div className='xl:w-1/2 2xl:w-1/2 flex justify-center mt-2'>
+                        <video autoPlay muted loop className="max-w-full h-auto">
+                        <source src={`${process.env.PUBLIC_URL}/image1.mp4`} type="video/mp4" />
+                        Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <div className='w-3/4'>
+                    <div className='xl:w-3/4 2xl:w-3/4'>
                         <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-right aligning-right leading-loose">
                             Bringing data from IT systems, visual media, manuals, engineering diagrams, and OT together to make data-driven decisions and react immediately. <br></br>But we wanted to go beyond being reactive. <br></br><br></br><br></br><br></br><br></br><br></br>
                         </p>
@@ -330,15 +333,18 @@ const sections: SectionData[] = [
         title: 'Accelerate Innovation with AI',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black mb-4 text-left leading-loose" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Accelerate Innovation with AI</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl font-extrabold text-black text-left leading-loose mt-24 xl:mb-2 2xl:mb-8" style={{ background: 'linear-gradient(180deg, #84e291, #21a1d3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Accelerate Innovation with AI</h3>
                 <div className="flex flex-row items-center">
-                  <div className='w-3/4'>
+                  <div className='xl:w-3/4 2xl:w-3/4'>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-left aligning-left leading-loose">
                         The real value behind using data is in strategically applying AI and Machine Learning algorithms that leverage all that consolidated information to predict behavior and accelerate root cause analysis. <br></br>The engineering team can now proactively overcome challenges before they become a problem. <br></br><br></br><br></br><br></br><br></br><br></br>
                     </p>
                   </div>
-                                    <div className='xl:w-1/4 2xl:w-1/2 flex justify-center mt-32'>
-                                        <img src={`${process.env.PUBLIC_URL}/image6.gif`} alt="AI Innovation Illustration" className="max-w-full h-auto" />
+                                    <div className='xl:w-1/2 2xl:w-1/2 flex justify-center'>
+                                        <video autoPlay muted loop className="max-w-full h-auto">
+                                            <source src={`${process.env.PUBLIC_URL}/image6.mp4`} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
                                     </div>
                 </div>
             </>
