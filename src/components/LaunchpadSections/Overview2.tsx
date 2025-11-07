@@ -270,7 +270,7 @@ const sections: SectionData[] = [
             </p>
             <div className="mt-6 w-full flex items-center justify-center max-w-6xl mx-auto">
                 <div className="w-full flex items-center justify-center">
-                    <video autoPlay muted loop playsInline preload="metadata" className="w-full max-h-[40vh] sm:max-h-[50vh] md:max-h-[55vh] lg:max-h-[60vh] xl:max-h-[30vh] 2xl:max-h-[60vh] object-contain">
+                    <video autoPlay muted loop playsInline preload="metadata" className="w-full max-h-[30vh] sm:max-h-[50vh] md:max-h-[55vh] lg:max-h-[60vh] xl:max-h-[30vh] 2xl:max-h-[30vh] object-contain">
                         <source src={`${process.env.PUBLIC_URL}/line.mp4`} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
