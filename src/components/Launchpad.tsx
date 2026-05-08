@@ -100,8 +100,8 @@ const Launchpad: React.FC = () => {
         </button> */}
 
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-          <div className="sidebar-header">
-              <img src={`${process.env.PUBLIC_URL}/accelerate-logo.png`} alt="Logo" className="sidebar-logo" />
+          <div className="sidebar-header">                
+              <img style={{ height: 'clamp(5%, 6vh, 60px)', width: 'auto', objectFit: 'contain' }} src={`${process.env.PUBLIC_URL}/accelerate-logo.png`} alt="Logo" className="sidebar-logo" />
           </div>
           <nav className="sidebar-nav">
             <button 
