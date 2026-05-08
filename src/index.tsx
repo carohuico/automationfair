@@ -50,9 +50,7 @@ try {
 
   const origins = extractOriginsFromUrls(EMBED_URLS);
 
-  // run preloads but don't block rendering
   const preloader = preloadAssets({ images: IMAGES, videos: VIDEOS, origins, timeoutMs: 8000 });
-  // optional: you could react to preloader.done.then(() => console.log('preload done'))
 } catch (e) {
   // ignore preload errors
 }

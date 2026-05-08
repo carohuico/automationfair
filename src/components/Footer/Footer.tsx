@@ -10,7 +10,6 @@ interface FooterProps {
   handleSectionChange?: (section: string) => void;
   currentSection?: string;
   navigationHistory?: string[];
-  // Props para navegación interna de vistas
   currentView?: number;
   onViewChange?: (view: number) => void;
   totalViews?: number;
