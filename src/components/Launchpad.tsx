@@ -83,22 +83,6 @@ const Launchpad: React.FC = () => {
   return (
     <div className="launchpad-root">
       <div className="launchpad-container">
-        {/* <button 
-          className={`hamburger-menu ${sidebarOpen ? 'open' : 'closed'}`}
-          onClick={toggleSidebar}
-          aria-label="Toggle menu"
-        > */}
-          {/* {sidebarOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
-            </svg>
-          )}
-        </button> */}
-
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           <div className="sidebar-header">                
               <img style={{ height: 'clamp(5%, 6vh, 60px)', width: 'auto', objectFit: 'contain' }} src={`${process.env.PUBLIC_URL}/accelerate-logo.png`} alt="Logo" className="sidebar-logo" />

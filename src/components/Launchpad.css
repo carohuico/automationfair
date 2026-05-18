@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Shared sidebar sizing variables so both sidebar footers can use the exact
-   same responsive width without duplicating hardcoded values. */
 :root {
   --sidebar-width: clamp(280px, 25vw, 400px);
-  --sidebar-border-width: 8px; /* used by .sidebar.open border-right */
+  --sidebar-border-width: 8px; 
   --sidebar-footer-width: calc(var(--sidebar-width) - var(--sidebar-border-width));
 }
 
@@ -65,7 +63,6 @@ html, body {
 }
 
 .sidebar.open {
-  /* Use the shared variable for width so it matches .initial.open */
   width: var(--sidebar-width);
   border-right: var(--sidebar-border-width) solid #d3d3d3;
 }
@@ -194,7 +191,7 @@ html, body {
   position: relative;
 }
 
-/* Launchpad section container styles - all sections rendered simultaneously */
+/* Launchpad section container styles*/
 .launchpad-section {
   position: absolute;
   top: 0;
@@ -224,7 +221,6 @@ html, body {
   margin-bottom: 20px;
 }
 
-/* LG screens - Pantallas medianas */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .sidebar-item {
     min-height: 1.5rem;
@@ -256,7 +252,7 @@ html, body {
   }
 }
 
-/* full screen compu */
+/* full screen computer */
 @media (min-width: 1280px) and (max-width: 1799px) and (min-height: 800px) {
   .sidebar-item {
     min-height: 1.5rem;
@@ -363,10 +359,6 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  /* Make the footer width explicitly match the sidebar's effective content
-     width (sidebar width minus its right border). This ensures parity with
-     the initial footer even if one of them renders with/without a border. */
-  /* fallback: sidebar width minus border (matches previous hardcoded behavior) */
   width: var(--sidebar-footer-width, calc(clamp(280px, 25vw, 400px) - 8px));
   background: white;
   padding: 16px 20px;
