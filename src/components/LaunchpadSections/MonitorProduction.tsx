@@ -42,6 +42,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     const next = !agentOpen;
     setAgentOpen(next);
     if (next) {
+      // Reinicia el video al abrir
       if (videoRef.current) {
         videoRef.current.currentTime = 0;
         videoRef.current.play().catch(() => {});
