@@ -37,6 +37,9 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   const lineChartInstance = useRef<any>(null);
   const barChartInstance = useRef<any>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const agentPanelRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
   const toggleAgent = () => {
     const next = !agentOpen;
@@ -50,6 +53,37 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
       videoRef.current?.pause();
     }
   };
+
+  // Close agent when clicking/touching outside of it
+  useEffect(() => {
+    if (!agentOpen) return;
+
+    const onDocPointer = (e: MouseEvent | TouchEvent) => {
+      const target = (e as any).target as Node | null;
+      if (!target) return;
+
+      const panel = agentPanelRef.current;
+      const toggleBtn = toggleButtonRef.current;
+
+      // If click is inside panel or the toggle button, ignore
+      if (panel && panel.contains(target)) return;
+      if (toggleBtn && toggleBtn.contains(target)) return;
+
+      // otherwise close agent
+      setAgentOpen(false);
+      try {
+        videoRef.current?.pause();
+      } catch (err) {}
+    };
+
+    document.addEventListener('mousedown', onDocPointer);
+    document.addEventListener('touchstart', onDocPointer);
+
+    return () => {
+      document.removeEventListener('mousedown', onDocPointer);
+      document.removeEventListener('touchstart', onDocPointer);
+    };
+  }, [agentOpen]);
 
   useEffect(() => {
     if (activeTab !== 'escapement') return;
@@ -205,6 +239,28 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     };
   }, [activeTab]);
 
+  // Observe container size changes and force chart resize so canvases adapt to available space
+  useEffect(() => {
+    const target = gridRef.current;
+    if (!target) return;
+
+    const resize = () => {
+      try {
+        lineChartInstance.current?.resize();
+        barChartInstance.current?.resize();
+      } catch (e) {}
+    };
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(target);
+    window.addEventListener('resize', resize);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', resize);
+    };
+  }, [agentOpen]);
+
   /* ── shared tab+agent bar ── */
   const TopBar = (
     <div
@@ -250,6 +306,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
 
       {/* RIGHT: AI Agent button */}
       <button
+        ref={toggleButtonRef}
         onClick={toggleAgent}
         title="Open AI Agent"
         style={{
@@ -353,36 +410,15 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   >
     <div
       className="img-container"
-      style={{
-        flex: 1,
-        minHeight: 0,
-        width: '100%',
-        maxWidth: '100%',
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'row',
-      }}
+
     >
       {/* MAIN CONTENT */}
       <div
         className="standard-content-container"
-        style={{
-          position: 'relative',
-          background: 'white',
-          padding: 'clamp(10px, 1.5vw, 20px)',
-          borderRadius: '12px',
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-          minWidth: 0,
-          height: '100%',
-          boxSizing: 'border-box',
-          overflow: 'hidden',
-        }}
+
       >
-        {/* TOP BAR */}
-        {TopBar}
+          {/* TOP BAR */}
+          {TopBar}
 
         {/* ESCAPEMENT */}
         {activeTab === 'escapement' && (
@@ -416,6 +452,8 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
             </div>
 
             <div
+              ref={gridRef}
+              className="charts-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns:
@@ -429,6 +467,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
             >
               {/* LEFT CHART */}
               <div
+                className="chart-panel left-chart"
                 style={{
                   background: '#fafafa',
                   borderRadius: '10px',
@@ -462,7 +501,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
                     position: 'relative',
                   }}
                 >
-                  <canvas ref={lineChartRef} />
+                  <canvas ref={lineChartRef} style={{ width: '100%', height: '100%', display: 'block' }} />
                 </div>
               </div>
 
@@ -479,6 +518,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
               >
                 {/* BAR CHART */}
                 <div
+                  className="chart-panel"
                   style={{
                     background: '#fafafa',
                     borderRadius: '10px',
@@ -504,7 +544,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
                       position: 'relative',
                     }}
                   >
-                    <canvas ref={barChartRef} />
+                    <canvas ref={barChartRef} style={{ width: '100%', height: '100%', display: 'block' }} />
                   </div>
                 </div>
 
@@ -625,9 +665,9 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
 
         {/* AGENT PANEL */}
         <div
+          ref={agentPanelRef}
           style={{
             position: 'absolute',
-            marginTop: '50px',
             marginRight: '15px',
             right: 0,
             top: 0,
@@ -650,31 +690,41 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
         >
 
           {/* VIDEO */}
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{
-                width: '100%',
-                borderRadius: '12px',
-                objectFit: 'cover',
-              }}
-            >
-              <source
-                src={`${process.env.PUBLIC_URL}/agent_demo.mp4`}
-              />
-            </video>
-          </div>
+<div
+  style={{
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    padding: '12px',
+    boxSizing: 'border-box',
+  }}
+>
+<video
+    ref={videoRef}
+    autoPlay
+    muted
+    loop
+    playsInline
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'contain',
+      borderRadius: '12px',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    }}
+>
+<source
+      src={`${process.env.PUBLIC_URL}/agent_demo.mp4`}
+      type="video/mp4"
+    />
+</video>
+</div>
         </div>
       </div>
     </div>
