@@ -45,7 +45,6 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     const next = !agentOpen;
     setAgentOpen(next);
     if (next) {
-      // Reinicia el video al abrir
       if (videoRef.current) {
         videoRef.current.currentTime = 0;
         videoRef.current.play().catch(() => {});
@@ -55,7 +54,6 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     }
   };
 
-  // Close agent when clicking/touching outside of it
   useEffect(() => {
     if (!agentOpen) return;
 
@@ -66,11 +64,9 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
       const panel = agentPanelRef.current;
       const toggleBtn = toggleButtonRef.current;
 
-      // If click is inside panel or the toggle button, ignore
       if (panel && panel.contains(target)) return;
       if (toggleBtn && toggleBtn.contains(target)) return;
 
-      // otherwise close agent
       setAgentOpen(false);
       try {
         videoRef.current?.pause();
@@ -240,7 +236,6 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
     };
   }, [activeTab]);
 
-  // Observe container size changes and force chart resize so canvases adapt to available space
   useEffect(() => {
     const target = gridRef.current;
     if (!target) return;
