@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import Footer from '../Footer/Footer';
+import Production from './Production';
 import {
   stationOptions,
   feederOptions,
@@ -645,7 +646,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
                 'padding-right 0.35s cubic-bezier(.4,0,.2,1)',
             }}
           >
-            <img
+            {/* <img
               src={`${process.env.PUBLIC_URL}/production.jpg`}
               alt="Production"
               style={{
@@ -655,7 +656,8 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
                 objectPosition: 'center',
                 display: 'block',
               }}
-            />
+            /> */}
+            <Production />
           </div>
         )}
 
