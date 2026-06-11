@@ -638,8 +638,8 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
               minHeight: 0,
               width: '100%',
               display: 'flex',
-              alignItems: 'flex-start',
-              justifyContent: 'flex-start',
+              alignItems: 'center',
+              justifyContent: 'center',
               overflow: 'hidden',
               paddingTop: '8px',
               paddingRight: agentOpen
