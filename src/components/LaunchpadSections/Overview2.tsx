@@ -91,7 +91,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
 
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-4 gap-2 justify-items-center mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 gap-8 justify-items-center mb-2">
                 {points.map((item, idx) => (
                     <div key={idx} className="relative flex flex-col items-center justify-center flex-shrink-0">
                         <div
@@ -103,7 +103,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                             circle flex items-center justify-center rounded-full
                             hover:cursor-pointer transition-all duration-300
                             
-                            w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-48 2xl:h-48
+                            w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-56 2xl:h-56
                             
                             bg-gradient-to-r from-[#62ccef] to-[#84e291] relative">
                             <span className="text-white text-center font-semibold px-0.5 sm:px-1 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs xl:text-xs leading-tight 2xl:text-xl">
@@ -152,7 +152,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                         <div className="relative rounded-lg shadow-lg" style={{
                             background: "white",
                         }}>
-                            <div className="flex items-center justify-between p-2 border-b rounded-t border-gray-300">
+                            <div className="flex items-center justify-between p-4 border-b rounded-t border-gray-300">
                                 <h3 className="text-2xl font-semibold text-black">
                                     {circleData[selectedPoint as keyof typeof circleData].title}
                                 </h3>
@@ -254,7 +254,7 @@ const sections: SectionData[] = [
         content: (
           <>
             <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mb-2 2xl:text-5xl font-extrabold text-black 2xl:mb-6 leading-loose 2xl:mt-8 xl:mt-2 text-center">Welcome to our<br></br> Digital Scalable Solutions experience.</h3>  
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-3xl 2xl:p-6 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose">
                 In just a few minutes, you will discover how we accelerated future innovation by investing in leveraging data and AI to empower engineers, reduce downtime, and optimize production for Rockwell Automation's 100C production line. 
             </p>
             <div className="mt-6 w-full flex items-center justify-center max-w-6xl mx-auto">
@@ -355,7 +355,7 @@ const sections: SectionData[] = [
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light leading-relaxed text-center">
                     With Kalypso, we've proven value and scaled up this initiative to deliver results across the Connected Enterprise.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-2 2xl:mt-2 text-center">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-6 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-2 2xl:mt-2 text-center">
                     This is how we did it:
                 </p>
                 <ScalableDigitalSolutions
@@ -380,8 +380,8 @@ const sections: SectionData[] = [
         title: 'Results',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-full font-bold leading-loose xl:mb-4 2xl:mb-4  text-center">What we have achieved</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:gap-24 2xl:gap-24 w-full max-w-6xl xl:p-12 2xl:p-8 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-full font-bold leading-loose xl:mb-4 2xl:mb-8  text-center">What we have achieved</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:gap-24 2xl:gap-32 w-full max-w-6xl xl:p-12 2xl:p-24 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
                     <div className="flex flex-col items-center text-white">
                         <div className="flex flex-row items-center justify-center 2xl:h-[150px] xl:h-[70px]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="xl:size-12 2xl:size-28">
