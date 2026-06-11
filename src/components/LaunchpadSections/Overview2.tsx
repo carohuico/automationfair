@@ -130,9 +130,15 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
             </div>
 
             {isModalOpen && selectedPoint !== null && (
-                <div
-                    className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-4 bg-black/50 z-[9999]"
+                <div 
+                    className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-4 bg-black/50"
                     onClick={handleModalBackdropClick}
+                    style={{
+                        margin: 0,
+                        width: '100%',
+                        height: '100vh',
+                        zIndex: 9999999
+                    }}
                 >
                     <style>
                         {`
@@ -148,17 +154,22 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                         }
                         `}
                     </style>
-                    <div className="relative w-full max-w-7xl max-h-[90vh] mx-auto transition-all duration-300 scale-100 opacity-100 animate-modal-in overflow-y-auto">
+                    <div className="
+                        relative w-full max-w-7xl max-h-[100%] mx-auto ml-4 mr-4
+                        transition-all duration-300
+                        scale-100 opacity-100
+                        animate-modal-in
+                    ">
                         <div className="relative rounded-lg shadow-lg" style={{
                             background: "white",
                         }}>
-                            <div className="flex items-center justify-between p-4 border-b rounded-t border-gray-300">
+                            <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-300">
                                 <h3 className="text-2xl font-semibold text-black">
                                     {circleData[selectedPoint as keyof typeof circleData].title}
                                 </h3>
                                 <button 
                                     type="button" 
-                                    className="text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" 
+                                    className="text-gray-400 bg-transparent hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" 
                                     onClick={closeModal}
                                 >
                                     <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -167,7 +178,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                     <span className="sr-only">Close modal</span>
                                 </button>
                             </div>
-                            <div className="pl-6 pr-6">
+                            <div className="p-6">
                                 {selectedPoint === 0 && (
                                     <div>
                                         <div className="flex items-start gap-6 lg:text-lg xl:text-xl 2xl:text-2xl text-left">
@@ -214,17 +225,17 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 )}
                                 {selectedPoint === 4 && (
                                     <div>
-                                        <div className="flex items-start gap-6 lg:text-lg xl:text-lg 2xl:text-2xl text-left">
+                                        <div className="flex items-start gap-6 lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                             {circleData[selectedPoint as keyof typeof circleData].description}
                                         </div>
-                                        <img src={`${process.env.PUBLIC_URL}/industrial.png`} alt="Industrial DataOps + AI Illustration" className="w-full h-auto" />
+                                        <img src={`${process.env.PUBLIC_URL}/industrial.png`} alt="Industrial DataOps + AI Illustration" className="max-w-full h-auto" />
                                     </div>
                                 )}
                                 {selectedPoint === 5 && (
                                     <>
                                         <div className="flex flex-row items-center">
                                             <div className="w-3/4">
-                                                <div className="flex items-start lg:text-lg xl:text-lg 2xl:text-2xl text-left">
+                                                <div className="flex items-start lg:text-lg xl:text-xl 2xl:text-2xl text-left">
                                                     {circleData[selectedPoint as keyof typeof circleData].description}
                                                 </div>
                                             </div>
@@ -254,7 +265,7 @@ const sections: SectionData[] = [
         content: (
           <>
             <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl xl:mb-2 2xl:text-5xl font-extrabold text-black 2xl:mb-6 leading-loose 2xl:mt-8 xl:mt-2 text-center">Welcome to our<br></br> Digital Scalable Solutions experience.</h3>  
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-3xl 2xl:p-6 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light text-center aligning-center leading-loose">
                 In just a few minutes, you will discover how we accelerated future innovation by investing in leveraging data and AI to empower engineers, reduce downtime, and optimize production for Rockwell Automation's 100C production line. 
             </p>
             <div className="mt-6 w-full flex items-center justify-center max-w-6xl mx-auto">
@@ -352,10 +363,10 @@ const sections: SectionData[] = [
         title: 'This is how we did it:',
         content: (
             <>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light leading-relaxed text-center">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light leading-relaxed text-center">
                     With Kalypso, we've proven value and scaled up this initiative to deliver results across the Connected Enterprise.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-6 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-2 2xl:mt-2 text-center">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-16 2xl:mt-14 text-center">
                     This is how we did it:
                 </p>
                 <ScalableDigitalSolutions
