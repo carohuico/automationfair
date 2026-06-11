@@ -91,7 +91,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
 
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 gap-8 justify-items-center mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-4 gap-2 justify-items-center mb-2">
                 {points.map((item, idx) => (
                     <div key={idx} className="relative flex flex-col items-center justify-center flex-shrink-0">
                         <div
@@ -103,7 +103,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                             circle flex items-center justify-center rounded-full
                             hover:cursor-pointer transition-all duration-300
                             
-                            w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-56 2xl:h-56
+                            w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-48 2xl:h-48
                             
                             bg-gradient-to-r from-[#62ccef] to-[#84e291] relative">
                             <span className="text-white text-center font-semibold px-0.5 sm:px-1 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs xl:text-xs leading-tight 2xl:text-xl">
@@ -130,15 +130,9 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
             </div>
 
             {isModalOpen && selectedPoint !== null && (
-                <div 
-                    className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-4 bg-black/50"
+                <div
+                    className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-4 bg-black/50 z-[9999]"
                     onClick={handleModalBackdropClick}
-                    style={{
-                        margin: 0,
-                        width: '100%',
-                        height: '100vh',
-                        zIndex: 9999999
-                    }}
                 >
                     <style>
                         {`
@@ -154,22 +148,17 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                         }
                         `}
                     </style>
-                    <div className="
-                        relative w-full max-w-7xl max-h-[100%] mx-auto ml-4 mr-4
-                        transition-all duration-300
-                        scale-100 opacity-100
-                        animate-modal-in
-                    ">
+                    <div className="relative w-full max-w-7xl max-h-[90vh] mx-auto transition-all duration-300 scale-100 opacity-100 animate-modal-in overflow-y-auto">
                         <div className="relative rounded-lg shadow-lg" style={{
                             background: "white",
                         }}>
-                            <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-300">
+                            <div className="flex items-center justify-between p-2 border-b rounded-t border-gray-300">
                                 <h3 className="text-2xl font-semibold text-black">
                                     {circleData[selectedPoint as keyof typeof circleData].title}
                                 </h3>
                                 <button 
                                     type="button" 
-                                    className="text-gray-400 bg-transparent hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" 
+                                    className="text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" 
                                     onClick={closeModal}
                                 >
                                     <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -178,7 +167,7 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                     <span className="sr-only">Close modal</span>
                                 </button>
                             </div>
-                            <div className="p-6">
+                            <div className="pl-6 pr-6">
                                 {selectedPoint === 0 && (
                                     <div>
                                         <div className="flex items-start gap-6 lg:text-lg xl:text-xl 2xl:text-2xl text-left">
@@ -225,17 +214,17 @@ const ScalableDigitalSolutions: React.FC<{ title: string; imageSrc: string; poin
                                 )}
                                 {selectedPoint === 4 && (
                                     <div>
-                                        <div className="flex items-start gap-6 lg:text-lg xl:text-xl 2xl:text-2xl text-left">
+                                        <div className="flex items-start gap-6 lg:text-lg xl:text-lg 2xl:text-2xl text-left">
                                             {circleData[selectedPoint as keyof typeof circleData].description}
                                         </div>
-                                        <img src={`${process.env.PUBLIC_URL}/industrial.png`} alt="Industrial DataOps + AI Illustration" className="max-w-full h-auto" />
+                                        <img src={`${process.env.PUBLIC_URL}/industrial.png`} alt="Industrial DataOps + AI Illustration" className="w-full h-auto" />
                                     </div>
                                 )}
                                 {selectedPoint === 5 && (
                                     <>
                                         <div className="flex flex-row items-center">
                                             <div className="w-3/4">
-                                                <div className="flex items-start lg:text-lg xl:text-xl 2xl:text-2xl text-left">
+                                                <div className="flex items-start lg:text-lg xl:text-lg 2xl:text-2xl text-left">
                                                     {circleData[selectedPoint as keyof typeof circleData].description}
                                                 </div>
                                             </div>
@@ -363,10 +352,10 @@ const sections: SectionData[] = [
         title: 'This is how we did it:',
         content: (
             <>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light leading-relaxed text-center">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-light leading-relaxed text-center">
                     With Kalypso, we've proven value and scaled up this initiative to deliver results across the Connected Enterprise.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-16 2xl:mt-14 text-center">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-5xl font-bold leading-loose xl:mb-6 xl:mt-4 2xl:mb-2 2xl:mt-2 text-center">
                     This is how we did it:
                 </p>
                 <ScalableDigitalSolutions
@@ -391,8 +380,8 @@ const sections: SectionData[] = [
         title: 'Results',
         content: (
             <>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-full font-bold leading-loose xl:mb-4 2xl:mb-8  text-center">What we have achieved</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:gap-24 2xl:gap-32 w-full max-w-6xl xl:p-12 2xl:p-24 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl max-w-full font-bold leading-loose xl:mb-4 2xl:mb-4  text-center">What we have achieved</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:gap-24 2xl:gap-24 w-full max-w-6xl xl:p-12 2xl:p-8 rounded-lg" style={{ background: 'linear-gradient(90deg, #026299ff 0%,  #187dc0ff 60%, #21a1d3 100%)' }}>
                     <div className="flex flex-col items-center text-white">
                         <div className="flex flex-row items-center justify-center 2xl:h-[150px] xl:h-[70px]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="xl:size-12 2xl:size-28">

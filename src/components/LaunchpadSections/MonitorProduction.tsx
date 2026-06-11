@@ -261,6 +261,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
   /* ── shared tab+agent bar ── */
   const TopBar = (
     <div
+      className="monitor-production-topbar"
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -306,6 +307,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
         ref={toggleButtonRef}
         onClick={toggleAgent}
         title="Open AI Agent"
+        className="monitor-production-agent-button"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -636,9 +638,10 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
               minHeight: 0,
               width: '100%',
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-start',
               overflow: 'hidden',
+              paddingTop: '8px',
               paddingRight: agentOpen
                 ? 'clamp(280px, 28vw, 380px)'
                 : '0px',
@@ -674,7 +677,7 @@ const MonitorProduction: React.FC<MonitorProductionProps> = ({
               ? 'clamp(280px, 28vw, 380px)'
               : '0px',
             overflow: 'hidden',
-            zIndex: 20,
+              zIndex: 20,
 
             display: 'flex',
             flexDirection: 'column',
